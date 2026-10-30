@@ -1,0 +1,1512 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta
+    name="description"
+    content="Dashboard demonstrativo do Lume Agenda para Vértice Auto Detail."
+  >
+  <title>Dashboard | Lume Agenda — Vértice Auto Detail</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="admin.css">
+
+  <script src="../js/demo-state.js" defer></script>
+  <script src="dashboard.js" defer></script>
+</head>
+
+<body class="dashboard-page">
+
+  <!-- AVISO DA DEMONSTRAÇÃO -->
+
+  <div class="dashboard-demo-banner">
+    <strong>DEMONSTRAÇÃO</strong>
+    <span>
+      Dados fictícios. Alterações armazenadas somente nesta
+      demonstração do navegador. Nenhum agendamento real é realizado.
+    </span>
+  </div>
+
+  <!-- LAYOUT PRINCIPAL -->
+
+  <div class="dashboard-layout">
+
+    <!-- MENU LATERAL -->
+
+    <aside
+      class="dashboard-sidebar"
+      id="dashboard-sidebar"
+      aria-label="Menu administrativo"
+    >
+
+      <div class="sidebar-top">
+        <a
+          href="../index.html"
+          class="sidebar-logo"
+          aria-label="Vértice Auto Detail — Voltar ao site"
+        >
+          <span>VÉRTICE<b>.</b></span>
+          <small>AUTO DETAIL</small>
+        </a>
+
+        <button
+          type="button"
+          class="sidebar-close"
+          id="sidebar-close"
+          aria-label="Fechar menu"
+        >&times;</button>
+      </div>
+
+      <div class="sidebar-product">
+        <span class="sidebar-product-icon">L</span>
+        <div>
+          <strong>Lume Agenda</strong>
+          <small>Painel administrativo</small>
+        </div>
+      </div>
+
+      <nav
+        class="sidebar-navigation"
+        aria-label="Seções do dashboard"
+      >
+
+        <p class="sidebar-label">MENU PRINCIPAL</p>
+
+        <button
+          type="button"
+          class="sidebar-link is-active"
+          data-view="overview"
+          aria-current="page"
+        >
+          <span class="sidebar-link-icon" aria-hidden="true">◫</span>
+          Visão geral
+        </button>
+
+        <button
+          type="button"
+          class="sidebar-link"
+          data-view="agenda"
+        >
+          <span class="sidebar-link-icon" aria-hidden="true">▦</span>
+          Agenda
+        </button>
+
+        <button
+          type="button"
+          class="sidebar-link"
+          data-view="requests"
+        >
+          <span class="sidebar-link-icon" aria-hidden="true">☷</span>
+          Solicitações
+          <span
+            class="sidebar-count"
+            id="sidebar-pending-count"
+          >0</span>
+        </button>
+
+        <button
+          type="button"
+          class="sidebar-link"
+          data-view="new"
+        >
+          <span class="sidebar-link-icon" aria-hidden="true">＋</span>
+          Novo agendamento
+        </button>
+
+        <p class="sidebar-label sidebar-label-secondary">
+          GERENCIAMENTO
+        </p>
+
+        <button
+          type="button"
+          class="sidebar-link"
+          data-view="services"
+        >
+          <span class="sidebar-link-icon" aria-hidden="true">◇</span>
+          Serviços
+        </button>
+
+        <button
+          type="button"
+          class="sidebar-link"
+          data-view="settings"
+        >
+          <span class="sidebar-link-icon" aria-hidden="true">⚙</span>
+          Configurações
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-company">
+          <span class="sidebar-avatar">V</span>
+          <div>
+            <strong>Vértice Auto Detail</strong>
+            <small>Ambiente demonstrativo</small>
+          </div>
+        </div>
+
+        <a href="../index.html" class="sidebar-exit">
+          ← Voltar ao site
+        </a>
+      </div>
+    </aside>
+
+    <!-- SOBREPOSIÇÃO DO MENU MOBILE -->
+
+    <button
+      type="button"
+      class="sidebar-overlay"
+      id="sidebar-overlay"
+      aria-label="Fechar menu lateral"
+      hidden
+    ></button>
+
+    <!-- ÁREA PRINCIPAL -->
+
+    <div class="dashboard-main-area">
+
+      <!-- CABEÇALHO -->
+
+      <header class="dashboard-topbar">
+
+        <div class="dashboard-topbar-left">
+          <button
+            type="button"
+            class="dashboard-menu-button"
+            id="dashboard-menu-button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="dashboard-sidebar"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="dashboard-breadcrumb">
+            <small>LUME AGENDA</small>
+            <strong id="dashboard-page-name">Visão geral</strong>
+          </div>
+        </div>
+
+        <div class="dashboard-topbar-actions">
+          <span class="dashboard-demo-label">
+            Modo demonstração
+          </span>
+
+          <div class="notifications-wrapper">
+            <button
+              type="button"
+              class="notification-button"
+              id="notification-button"
+              aria-label="Abrir notificações"
+              aria-expanded="false"
+              aria-controls="notification-panel"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+                <path d="M10 21h4"></path>
+              </svg>
+
+              <span
+                class="notification-counter"
+                id="notification-counter"
+                hidden
+              >0</span>
+            </button>
+
+            <div
+              class="notification-panel"
+              id="notification-panel"
+              hidden
+            >
+              <div class="notification-panel-header">
+                <strong>Notificações</strong>
+                <button
+                  type="button"
+                  id="notification-close"
+                  aria-label="Fechar notificações"
+                >&times;</button>
+              </div>
+
+              <p class="notification-description">
+                Solicitações demonstrativas aguardando análise.
+              </p>
+
+              <div id="notification-list"></div>
+
+              <button
+                type="button"
+                class="notification-view-all"
+                id="notification-view-all"
+              >
+                Ver solicitações
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="dashboard-user"
+            aria-label="Perfil demonstrativo"
+          >AD</div>
+        </div>
+      </header>
+
+      <!-- CONTEÚDO DO DASHBOARD -->
+
+      <main class="dashboard-content">
+
+        <!-- 1. VISÃO GERAL -->
+
+        <section
+          class="dashboard-view"
+          id="view-overview"
+          data-title="Visão geral"
+        >
+
+          <div class="dashboard-page-heading">
+            <div>
+              <span class="dashboard-eyebrow">
+                PAINEL ADMINISTRATIVO
+              </span>
+              <h1>Visão geral</h1>
+              <p>
+                Acompanhe os atendimentos e organize
+                a rotina do estabelecimento.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              class="dashboard-btn dashboard-btn-primary"
+              data-go="new"
+            >
+              ＋ Novo agendamento
+            </button>
+          </div>
+
+          <!-- INDICADORES -->
+
+          <div
+            class="dashboard-stats-grid dashboard-overview-stats"
+            aria-label="Filtrar agendamentos"
+          >
+
+            <button
+              type="button"
+              class="dashboard-stat-card dashboard-stat-link"
+              data-overview-filter="today"
+              aria-pressed="false"
+            >
+              <span class="dashboard-stat-top">
+                <span>Agendamentos hoje</span>
+                <span class="dashboard-stat-arrow" aria-hidden="true">↗</span>
+              </span>
+              <strong id="stat-today">0</strong>
+              <small>Confirmados de hoje</small>
+              <span class="dashboard-stat-action">
+                Ver atendimentos
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="dashboard-stat-card dashboard-stat-link"
+              data-overview-filter="pending"
+              aria-pressed="false"
+            >
+              <span class="dashboard-stat-top">
+                <span>Pendentes</span>
+                <span class="dashboard-stat-arrow" aria-hidden="true">↗</span>
+              </span>
+              <strong id="stat-pending" class="stat-orange">0</strong>
+              <small>Todas as datas</small>
+              <span class="dashboard-stat-action">
+                Ver solicitações
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="dashboard-stat-card dashboard-stat-link"
+              data-overview-filter="confirmed"
+              aria-pressed="false"
+            >
+              <span class="dashboard-stat-top">
+                <span>Confirmados</span>
+                <span class="dashboard-stat-arrow" aria-hidden="true">↗</span>
+              </span>
+              <strong id="stat-confirmed">0</strong>
+              <small>Hoje e datas futuras</small>
+              <span class="dashboard-stat-action">
+                Ver confirmados
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="dashboard-stat-card dashboard-stat-link"
+              data-overview-filter="cancelled-rejected"
+              aria-pressed="false"
+            >
+              <span class="dashboard-stat-top">
+                <span>Cancelados e recusados</span>
+                <span class="dashboard-stat-arrow" aria-hidden="true">↗</span>
+              </span>
+              <strong id="stat-cancelled">0</strong>
+              <small>Histórico completo</small>
+              <span class="dashboard-stat-action">
+                Ver histórico
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="dashboard-stat-card dashboard-stat-link"
+              data-overview-filter="completed"
+              aria-pressed="false"
+            >
+              <span class="dashboard-stat-top">
+                <span>Finalizados</span>
+                <span class="dashboard-stat-arrow" aria-hidden="true">↗</span>
+              </span>
+              <strong id="stat-completed" class="stat-green">0</strong>
+              <small>Serviços concluídos</small>
+              <span class="dashboard-stat-action">
+                Ver finalizados
+              </span>
+            </button>
+          </div>
+
+          <!-- SOLICITAÇÕES RECENTES -->
+
+          <div
+            class="dashboard-section-card"
+            id="overview-requests-card"
+          >
+            <div class="dashboard-card-heading">
+              <div>
+                <h2 id="overview-requests-title">
+                  Solicitações recentes
+                </h2>
+                <p id="overview-requests-description">
+                  Confira as últimas movimentações da agenda demonstrativa.
+                </p>
+              </div>
+
+              <div class="overview-requests-actions">
+                <button
+                  type="button"
+                  class="dashboard-text-button"
+                  id="overview-reset-filter"
+                  hidden
+                >
+                  Ver solicitações recentes
+                </button>
+
+                <button
+                  type="button"
+                  class="dashboard-text-button"
+                  id="overview-view-all"
+                  data-go="requests"
+                >
+                  Ver todas →
+                </button>
+              </div>
+            </div>
+
+            <p
+              class="overview-results-count"
+              id="overview-results-count"
+              aria-live="polite"
+              hidden
+            ></p>
+
+            <div id="overview-requests"></div>
+          </div>
+
+          <!-- PRÓXIMOS ATENDIMENTOS E FUNCIONAMENTO -->
+
+          <div class="dashboard-overview-bottom">
+
+            <div class="dashboard-section-card">
+              <div class="dashboard-card-heading">
+                <div>
+                  <h2>Próximos atendimentos</h2>
+                  <p>Serviços confirmados para os próximos dias.</p>
+                </div>
+              </div>
+              <div id="overview-upcoming"></div>
+              <button type="button" class="dashboard-text-button overview-upcoming-all" id="overview-upcoming-all">Ver todos →</button>
+            </div>
+
+            <div class="dashboard-section-card dashboard-operating-card">
+              <div class="dashboard-card-heading">
+                <div>
+                  <h2>Funcionamento</h2>
+                  <p>Configurações atuais da agenda.</p>
+                </div>
+              </div>
+
+              <div class="dashboard-quick-info">
+
+                <div class="dashboard-quick-info-item">
+                  <div class="dashboard-quick-info-label">
+                    <span class="dashboard-quick-info-icon" aria-hidden="true">
+                      ◷
+                    </span>
+                    <span>Horário de hoje</span>
+                  </div>
+                  <strong id="overview-today-hours">—</strong>
+                </div>
+
+                <div class="dashboard-quick-info-item">
+                  <div class="dashboard-quick-info-label">
+                    <span class="dashboard-quick-info-icon" aria-hidden="true">
+                      ▦
+                    </span>
+                    <span>Dias de funcionamento</span>
+                  </div>
+                  <strong id="overview-open-days">—</strong>
+                </div>
+
+                <div class="dashboard-quick-info-item">
+                  <div class="dashboard-quick-info-label">
+                    <span class="dashboard-quick-info-icon" aria-hidden="true">
+                      ◉
+                    </span>
+                    <span>Capacidade simultânea</span>
+                  </div>
+                  <strong id="overview-capacity">—</strong>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                class="dashboard-text-button dashboard-operating-link"
+                data-go="settings"
+              >
+                Gerenciar configurações →
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. AGENDA -->
+
+        <section
+          class="dashboard-view"
+          id="view-agenda"
+          data-title="Agenda"
+          hidden
+        >
+
+          <div class="dashboard-page-heading">
+            <div>
+              <span class="dashboard-eyebrow">
+                ORGANIZAÇÃO DE ATENDIMENTOS
+              </span>
+              <h1>Agenda</h1>
+              <p>
+                Consulte os atendimentos, acompanhe o calendário
+                e administre os bloqueios da demonstração.
+              </p>
+            </div>
+
+            <div class="dashboard-heading-actions">
+
+              <button
+                type="button"
+                class="dashboard-btn dashboard-btn-primary"
+                data-go="new"
+              >
+                ＋ Novo agendamento
+              </button>
+
+              <button
+                type="button"
+                class="dashboard-btn dashboard-btn-outline dashboard-block-open"
+                id="open-block-modal"
+                aria-haspopup="dialog"
+                aria-controls="block-modal"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M5.6 5.6 18.4 18.4"></path>
+                </svg>
+                Bloquear agenda
+              </button>
+            </div>
+          </div>
+
+          <!-- CALENDÁRIO ADMINISTRATIVO -->
+
+          <div class="dashboard-agenda-layout">
+
+            <div class="dashboard-section-card">
+              <div class="dashboard-card-heading">
+                <div>
+                  <h2>Calendário de atendimentos</h2>
+                  <p>Selecione uma data para consultar a agenda.</p>
+                </div>
+              </div>
+
+              <div class="dashboard-calendar">
+
+                <div class="dashboard-calendar-header">
+                  <button
+                    type="button"
+                    id="calendar-prev"
+                    aria-label="Mês anterior"
+                  >&lsaquo;</button>
+
+                  <h3 id="calendar-month-label">—</h3>
+
+                  <button
+                    type="button"
+                    id="calendar-next"
+                    aria-label="Próximo mês"
+                  >&rsaquo;</button>
+                </div>
+
+                <div
+                  class="dashboard-calendar-weekdays"
+                  aria-hidden="true"
+                >
+                  <span>Dom</span>
+                  <span>Seg</span>
+                  <span>Ter</span>
+                  <span>Qua</span>
+                  <span>Qui</span>
+                  <span>Sex</span>
+                  <span>Sáb</span>
+                </div>
+
+                <div
+                  class="dashboard-calendar-days"
+                  id="calendar-days"
+                ></div>
+              </div>
+            </div>
+
+            <!-- ATENDIMENTOS DA DATA -->
+
+            <div class="dashboard-section-card">
+              <div class="dashboard-card-heading">
+                <div>
+                  <h2 id="agenda-selected-date-title">
+                    Atendimentos do dia
+                  </h2>
+                  <p id="agenda-selected-date-description">
+                    Selecione uma data para visualizar os agendamentos.
+                  </p>
+                </div>
+              </div>
+
+              <div id="agenda-day-bookings"></div>
+            </div>
+          </div>
+
+          <!-- BLOQUEIOS CADASTRADOS -->
+
+          <div class="dashboard-section-card dashboard-blocks-card">
+            <div class="dashboard-card-heading">
+              <div>
+                <h2>Bloqueios cadastrados</h2>
+                <p>
+                  Consulte os períodos indisponíveis e remova
+                  bloqueios quando necessário.
+                </p>
+              </div>
+            </div>
+
+            <div id="agenda-blocks-list"></div>
+          </div>
+        </section>
+
+        <!-- 3. SOLICITAÇÕES -->
+
+        <section
+          class="dashboard-view"
+          id="view-requests"
+          data-title="Solicitações"
+          hidden
+        >
+
+          <div class="dashboard-page-heading">
+            <div>
+              <span class="dashboard-eyebrow">
+                GERENCIAMENTO DE PEDIDOS
+              </span>
+              <h1>Solicitações</h1>
+              <p>
+                Analise os pedidos de agendamento, confirme ou recuse
+                solicitações e acompanhe o histórico.
+              </p>
+            </div>
+          </div>
+
+          <div class="dashboard-section-card">
+            <div class="dashboard-card-heading">
+              <div>
+                <h2 id="requests-heading">
+                  Todas as solicitações
+                </h2>
+                <p id="requests-description">
+                  Consulte os pedidos da agenda demonstrativa.
+                </p>
+              </div>
+            </div>
+
+            <div class="dashboard-request-filters">
+
+              <label class="dashboard-field">
+                Filtrar por situação
+                <select id="requests-filter">
+                  <option value="all">Todas as solicitações</option>
+                  <option value="pending">Pendentes</option>
+                  <option value="confirmed">Confirmadas</option>
+                  <option value="completed">Finalizadas</option>
+                  <option value="cancelled">Canceladas</option>
+                  <option value="rejected">Recusadas</option>
+                </select>
+              </label>
+
+              <label class="dashboard-field">
+                Pesquisar
+                <input
+                  type="search"
+                  id="requests-search"
+                  placeholder="Nome, serviço ou veículo"
+                  autocomplete="off"
+                >
+              </label>
+            </div>
+
+            <p
+              id="requests-count"
+              class="dashboard-results-count"
+              aria-live="polite"
+            ></p>
+
+            <div id="requests-list"></div>
+          </div>
+        </section>
+
+        <!-- 4. NOVO AGENDAMENTO -->
+
+        <section
+          class="dashboard-view"
+          id="view-new"
+          data-title="Novo agendamento"
+          hidden
+        >
+
+          <div class="dashboard-page-heading">
+            <div>
+              <span class="dashboard-eyebrow">
+                CADASTRO MANUAL
+              </span>
+              <h1>Novo agendamento</h1>
+              <p>
+                Cadastre um atendimento fictício diretamente
+                pelo painel administrativo.
+              </p>
+            </div>
+          </div>
+
+          <div class="dashboard-section-card">
+            <div class="dashboard-card-heading">
+              <div>
+                <h2>Dados do agendamento</h2>
+                <p>
+                  Preencha as informações para simular
+                  um novo atendimento.
+                </p>
+              </div>
+            </div>
+
+            <form
+              id="manual-booking-form"
+              class="dashboard-form"
+              novalidate
+            >
+
+              <div class="dashboard-form-grid">
+
+                <label class="dashboard-field">
+                  Nome do cliente
+                  <input
+                    type="text"
+                    id="manual-name"
+                    maxlength="100"
+                    placeholder="Ex.: Cliente demonstrativo"
+                    autocomplete="off"
+                    required
+                  >
+                </label>
+
+                <label class="dashboard-field">
+                  WhatsApp
+                  <input
+                    type="tel"
+                    id="manual-phone"
+                    maxlength="20"
+                    placeholder="(21) 99999-9999"
+                    autocomplete="off"
+                    required
+                  >
+                </label>
+
+                <label class="dashboard-field">
+                  Veículo
+                  <input
+                    type="text"
+                    id="manual-vehicle"
+                    maxlength="120"
+                    placeholder="Ex.: Volkswagen Polo"
+                    required
+                  >
+                </label>
+
+                <label class="dashboard-field">
+                  Serviço
+                  <select id="manual-service" required>
+                    <option value="">Selecione um serviço</option>
+                  </select>
+                </label>
+
+                <label class="dashboard-field">
+                  Data
+                  <input
+                    type="date"
+                    id="manual-date"
+                    class="dashboard-date-picker"
+                    required
+                  >
+                </label>
+
+                <label class="dashboard-field">
+                  Horário de início
+                  <select id="manual-time" required>
+                    <option value="">Selecione um horário</option>
+                  </select>
+                </label>
+
+                <label class="dashboard-field">
+                  Situação inicial
+                  <select id="manual-status" required>
+                    <option value="confirmed">Confirmado</option>
+                    <option value="pending">Pendente</option>
+                  </select>
+                </label>
+
+                <label class="dashboard-field dashboard-field-full">
+                  Observações (opcional)
+                  <textarea
+                    id="manual-notes"
+                    rows="4"
+                    maxlength="600"
+                    placeholder="Informações fictícias sobre o atendimento"
+                  ></textarea>
+                </label>
+              </div>
+
+              <p
+                id="manual-booking-error"
+                class="dashboard-form-error"
+                role="alert"
+                hidden
+              ></p>
+
+              <div class="dashboard-form-actions">
+                <button
+                  type="reset"
+                  class="dashboard-btn dashboard-btn-outline"
+                >
+                  Limpar formulário
+                </button>
+
+                <button
+                  type="submit"
+                  class="dashboard-btn dashboard-btn-primary"
+                >
+                  Criar agendamento
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- 5. SERVIÇOS -->
+
+        <section
+          class="dashboard-view"
+          id="view-services"
+          data-title="Serviços"
+          hidden
+        >
+
+          <div class="dashboard-page-heading">
+            <div>
+              <span class="dashboard-eyebrow">
+                CATÁLOGO DE ATENDIMENTOS
+              </span>
+              <h1>Serviços</h1>
+              <p>
+                Gerencie os serviços disponíveis para agendamento,
+                seus valores e suas durações.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              class="dashboard-btn dashboard-btn-primary"
+              id="open-service-create-modal"
+              aria-haspopup="dialog"
+              aria-controls="service-create-modal"
+            >
+              ＋ Novo serviço
+            </button>
+          </div>
+
+          <div class="dashboard-section-card">
+            <div class="dashboard-card-heading">
+              <div>
+                <h2>Serviços cadastrados</h2>
+                <p>
+                  Ative, desative ou edite os serviços da demonstração.
+                </p>
+              </div>
+            </div>
+
+            <div id="services-list"></div>
+          </div>
+        </section>
+
+        <!-- 6. CONFIGURAÇÕES -->
+
+        <section
+          class="dashboard-view"
+          id="view-settings"
+          data-title="Configurações"
+          hidden
+        >
+
+          <div class="dashboard-page-heading">
+            <div>
+              <span class="dashboard-eyebrow">
+                FUNCIONAMENTO DO ESTABELECIMENTO
+              </span>
+              <h1>Configurações</h1>
+              <p>
+                Defina os dias de atendimento, os horários
+                de funcionamento e a capacidade da agenda.
+              </p>
+            </div>
+          </div>
+
+          <!-- CAPACIDADE -->
+
+          <div class="dashboard-section-card">
+            <div class="dashboard-card-heading">
+              <div>
+                <h2>Capacidade de atendimento</h2>
+                <p>
+                  Configure quantos atendimentos podem acontecer
+                  simultaneamente e o intervalo entre horários.
+                </p>
+              </div>
+            </div>
+
+            <form
+              id="capacity-form"
+              class="dashboard-form"
+              novalidate
+            >
+              <div class="dashboard-form-grid">
+
+                <label class="dashboard-field">
+                  Atendimentos simultâneos
+                  <select id="settings-capacity" required>
+                    <option value="1">1 atendimento por vez</option>
+                    <option value="2">2 atendimentos por vez</option>
+                    <option value="3">3 atendimentos por vez</option>
+                    <option value="4">4 atendimentos por vez</option>
+                    <option value="5">5 atendimentos por vez</option>
+                    <option value="6">6 atendimentos por vez</option>
+                    <option value="7">7 atendimentos por vez</option>
+                    <option value="8">8 atendimentos por vez</option>
+                    <option value="9">9 atendimentos por vez</option>
+                    <option value="10">10 atendimentos por vez</option>
+                  </select>
+                </label>
+
+                <label class="dashboard-field">
+                  Intervalo entre horários
+                  <select id="settings-interval" required>
+                    <option value="15">A cada 15 minutos</option>
+                    <option value="30">A cada 30 minutos</option>
+                    <option value="60">A cada 60 minutos</option>
+                  </select>
+                </label>
+              </div>
+
+              <p
+                id="capacity-error"
+                class="dashboard-form-error"
+                role="alert"
+                hidden
+              ></p>
+
+              <div class="dashboard-form-actions">
+                <button
+                  type="submit"
+                  class="dashboard-btn dashboard-btn-primary"
+                >
+                  Salvar capacidade
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- HORÁRIOS SEMANAIS -->
+
+          <div class="dashboard-section-card dashboard-weekly-card">
+            <div class="dashboard-card-heading">
+              <div>
+                <h2>Dias e horários de funcionamento</h2>
+                <p>
+                  Defina quais dias o estabelecimento atende e os
+                  horários de abertura e encerramento.
+                </p>
+              </div>
+            </div>
+
+            <form
+              id="weekly-hours-form"
+              class="dashboard-form"
+              novalidate
+            >
+
+              <div
+                id="weekly-hours-list"
+                class="dashboard-weekly-list"
+              ></div>
+
+              <p
+                id="weekly-hours-error"
+                class="dashboard-form-error"
+                role="alert"
+                hidden
+              ></p>
+
+              <div class="dashboard-form-actions">
+                <button
+                  type="submit"
+                  class="dashboard-btn dashboard-btn-primary"
+                >
+                  Salvar horários
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- RESTAURAÇÃO -->
+
+          <div class="dashboard-section-card">
+            <div class="dashboard-card-heading">
+              <div>
+                <h2>Restaurar demonstração</h2>
+                <p>
+                  Volte às configurações originais da Vértice Auto Detail.
+                </p>
+              </div>
+            </div>
+
+            <div class="dashboard-reset-info">
+              <p>
+                Esta ação restaura os horários de funcionamento,
+                a capacidade, o catálogo de serviços, os bloqueios
+                e os agendamentos fictícios desta demonstração.
+              </p>
+
+              <p>
+                <strong>Atenção:</strong> as alterações feitas neste
+                navegador serão descartadas. As demonstrações abertas
+                por outras pessoas não serão afetadas.
+              </p>
+
+              <button
+                type="button"
+                class="dashboard-btn dashboard-btn-outline"
+                id="demo-reset-button"
+              >
+                Restaurar dados originais
+              </button>
+            </div>
+          </div>
+
+        </section>
+      </main>
+
+      <!-- NOTIFICAÇÃO TEMPORÁRIA -->
+
+      <div
+        class="dashboard-toast"
+        id="dashboard-toast"
+        role="status"
+        aria-live="polite"
+        hidden
+      ></div>
+    </div>
+  </div>
+
+  <!-- MODAL DE DETALHES DO AGENDAMENTO -->
+
+  <div
+    class="dashboard-modal"
+    id="booking-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="booking-modal-title"
+    hidden
+  >
+    <div class="dashboard-modal-overlay"></div>
+
+    <div class="dashboard-modal-content">
+      <div class="dashboard-modal-header">
+        <div>
+          <span class="dashboard-eyebrow">
+            INFORMAÇÕES DO ATENDIMENTO
+          </span>
+          <h2 id="booking-modal-title">
+            Detalhes do agendamento
+          </h2>
+        </div>
+
+        <button
+          type="button"
+          id="booking-modal-close"
+          class="dashboard-modal-close"
+          aria-label="Fechar detalhes"
+        >&times;</button>
+      </div>
+
+      <div
+        class="dashboard-modal-body"
+        id="booking-modal-body"
+      ></div>
+
+      <div
+        class="dashboard-modal-actions"
+        id="booking-modal-actions"
+      ></div>
+    </div>
+  </div>
+
+  <!-- MODAL DE EDIÇÃO DE SERVIÇOS -->
+
+  <div
+    class="dashboard-modal"
+    id="service-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="service-modal-title"
+    hidden
+  >
+    <div class="dashboard-modal-overlay"></div>
+
+    <div class="dashboard-modal-content">
+      <div class="dashboard-modal-header">
+        <div>
+          <span class="dashboard-eyebrow">
+            GERENCIAMENTO DO CATÁLOGO
+          </span>
+          <h2 id="service-modal-title">Editar serviço</h2>
+        </div>
+
+        <button
+          type="button"
+          class="dashboard-modal-close"
+          id="service-modal-close"
+          aria-label="Fechar edição"
+        >&times;</button>
+      </div>
+
+      <form
+        id="service-edit-form"
+        class="dashboard-form"
+        novalidate
+      >
+        <input
+          type="hidden"
+          id="service-edit-id"
+        >
+
+        <div class="dashboard-modal-body">
+          <div class="dashboard-form-grid">
+
+            <label class="dashboard-field dashboard-field-full">
+              Nome do serviço
+              <input
+                type="text"
+                id="service-edit-name"
+                maxlength="100"
+                required
+              >
+            </label>
+
+            <label class="dashboard-field">
+              Valor do serviço (R$)
+              <input
+                type="text"
+                id="service-edit-price"
+                inputmode="decimal"
+                required
+              >
+            </label>
+
+            <label class="dashboard-field">
+              Duração do serviço
+              <select id="service-edit-duration" required>
+                <option value="30">30 minutos</option>
+                <option value="60">1 hora</option>
+                <option value="90">1 hora e 30 minutos</option>
+                <option value="120">2 horas</option>
+                <option value="150">2 horas e 30 minutos</option>
+                <option value="180">3 horas</option>
+                <option value="240">4 horas</option>
+                <option value="300">5 horas</option>
+                <option value="360">6 horas</option>
+                <option value="420">7 horas</option>
+                <option value="480">8 horas</option>
+              </select>
+            </label>
+          </div>
+
+          <p
+            class="dashboard-form-error"
+            id="service-edit-error"
+            role="alert"
+            hidden
+          ></p>
+        </div>
+
+        <div class="dashboard-modal-actions">
+          <button
+            type="button"
+            class="dashboard-btn dashboard-btn-outline"
+            id="service-edit-cancel"
+          >
+            Cancelar
+          </button>
+
+          <button
+            type="submit"
+            class="dashboard-btn dashboard-btn-primary"
+          >
+            Salvar alterações
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL DE NOVO SERVIÇO -->
+
+  <div
+    class="dashboard-modal"
+    id="service-create-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="service-create-modal-title"
+    hidden
+  >
+    <div class="dashboard-modal-overlay"></div>
+
+    <div class="dashboard-modal-content">
+      <div class="dashboard-modal-header">
+        <div>
+          <span class="dashboard-eyebrow">
+            CATÁLOGO DE SERVIÇOS
+          </span>
+          <h2 id="service-create-modal-title">
+            Novo serviço
+          </h2>
+        </div>
+
+        <button
+          type="button"
+          class="dashboard-modal-close"
+          id="service-create-modal-close"
+          aria-label="Fechar cadastro"
+        >&times;</button>
+      </div>
+
+      <form
+        id="service-form"
+        class="dashboard-form"
+        novalidate
+      >
+        <div class="dashboard-modal-body">
+          <div class="dashboard-form-grid">
+
+            <label class="dashboard-field dashboard-field-full">
+              Nome do serviço
+              <input
+                type="text"
+                id="service-name"
+                maxlength="100"
+                placeholder="Ex.: Lavagem premium"
+                required
+              >
+            </label>
+
+            <label class="dashboard-field">
+              Valor do serviço (R$)
+              <input
+                type="text"
+                id="service-price"
+                inputmode="decimal"
+                placeholder="Ex.: 150,00"
+                required
+              >
+            </label>
+
+            <label class="dashboard-field">
+              Duração do serviço
+              <select id="service-duration" required>
+                <option value="">Selecione a duração</option>
+                <option value="30">30 minutos</option>
+                <option value="60">1 hora</option>
+                <option value="90">1 hora e 30 minutos</option>
+                <option value="120">2 horas</option>
+                <option value="150">2 horas e 30 minutos</option>
+                <option value="180">3 horas</option>
+                <option value="240">4 horas</option>
+                <option value="300">5 horas</option>
+                <option value="360">6 horas</option>
+                <option value="420">7 horas</option>
+                <option value="480">8 horas</option>
+              </select>
+            </label>
+          </div>
+
+          <p
+            id="service-form-error"
+            class="dashboard-form-error"
+            role="alert"
+            hidden
+          ></p>
+        </div>
+
+        <div class="dashboard-modal-actions">
+          <button
+            type="button"
+            class="dashboard-btn dashboard-btn-outline"
+            id="service-create-modal-cancel"
+          >
+            Cancelar
+          </button>
+
+          <button
+            type="submit"
+            class="dashboard-btn dashboard-btn-primary"
+          >
+            Adicionar serviço
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL DE BLOQUEIO DA AGENDA -->
+
+  <div
+    class="dashboard-modal"
+    id="block-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="block-modal-title"
+    hidden
+  >
+    <div class="dashboard-modal-overlay"></div>
+
+    <div class="dashboard-modal-content">
+      <div class="dashboard-modal-header">
+        <div>
+          <span class="dashboard-eyebrow">
+            DISPONIBILIDADE DA AGENDA
+          </span>
+          <h2 id="block-modal-title">
+            Bloquear agenda
+          </h2>
+        </div>
+
+        <button
+          type="button"
+          class="dashboard-modal-close"
+          id="block-modal-close"
+          aria-label="Fechar bloqueio"
+        >&times;</button>
+      </div>
+
+      <form
+        id="block-form"
+        class="dashboard-form"
+        novalidate
+      >
+        <div class="dashboard-modal-body">
+
+          <p class="dashboard-modal-description">
+            Escolha um dia inteiro ou um período específico
+            que ficará indisponível para agendamentos.
+          </p>
+
+          <div class="dashboard-form-grid">
+
+            <label class="dashboard-field">
+              Data do bloqueio
+              <input
+                type="date"
+                id="block-date"
+                class="dashboard-date-picker"
+                required
+              >
+            </label>
+
+            <label class="dashboard-field">
+              Tipo de bloqueio
+              <select id="block-type" required>
+                <option value="day">Dia inteiro</option>
+                <option value="period">Período específico</option>
+              </select>
+            </label>
+
+            <label
+              class="dashboard-field"
+              id="block-start-field"
+              hidden
+            >
+              Horário inicial
+              <input
+                type="time"
+                id="block-start"
+                value="08:00"
+              >
+            </label>
+
+            <label
+              class="dashboard-field"
+              id="block-end-field"
+              hidden
+            >
+              Horário final
+              <input
+                type="time"
+                id="block-end"
+                value="09:00"
+              >
+            </label>
+
+            <label class="dashboard-field dashboard-field-full">
+              Motivo (opcional)
+              <input
+                type="text"
+                id="block-reason"
+                maxlength="160"
+                placeholder="Ex.: Manutenção ou feriado"
+              >
+            </label>
+          </div>
+
+          <p
+            id="block-form-error"
+            class="dashboard-form-error"
+            role="alert"
+            hidden
+          ></p>
+        </div>
+
+        <div class="dashboard-modal-actions">
+          <button
+            type="button"
+            class="dashboard-btn dashboard-btn-outline"
+            id="block-modal-cancel"
+          >
+            Cancelar
+          </button>
+
+          <button
+            type="submit"
+            class="dashboard-btn dashboard-btn-primary"
+          >
+            Adicionar bloqueio
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Confirmação visual consistente com o painel -->
+  <div class="dashboard-modal" id="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title" hidden>
+    <div class="dashboard-modal-overlay"></div>
+    <div class="dashboard-modal-content lume-confirm-content">
+      <div class="dashboard-modal-header"><div><span class="dashboard-eyebrow">CONFIRMAÇÃO</span><h2 id="confirm-modal-title">Confirmar ação?</h2></div>
+        <button type="button" class="dashboard-modal-close" id="confirm-modal-close" aria-label="Fechar">&times;</button></div>
+      <div class="dashboard-modal-body"><p id="confirm-modal-message" class="lume-confirm-message"></p></div>
+      <div class="dashboard-modal-actions"><button type="button" class="dashboard-btn dashboard-btn-outline" id="confirm-modal-cancel">Voltar</button>
+        <button type="button" class="dashboard-btn lume-confirm-danger" id="confirm-modal-accept">Confirmar</button></div>
+    </div>
+  </div>
+  <!-- Reagendamento: preserva cadastro, valor, duração e status -->
+  <div class="dashboard-modal" id="reschedule-modal" role="dialog" aria-modal="true" aria-labelledby="reschedule-title" hidden>
+    <div class="dashboard-modal-overlay"></div>
+    <div class="dashboard-modal-content lume-reschedule-content">
+      <div class="dashboard-modal-header"><div><span class="dashboard-eyebrow">ALTERAR DATA E HORÁRIO</span><h2 id="reschedule-title">Reagendar atendimento</h2></div>
+        <button type="button" class="dashboard-modal-close" id="reschedule-close" aria-label="Fechar">&times;</button></div>
+      <form id="reschedule-form">
+        <div class="dashboard-modal-body"><p id="reschedule-summary" class="lume-reschedule-summary"></p>
+          <div class="lume-reschedule-fields"><label class="dashboard-field">Nova data<input type="date" id="reschedule-date"></label>
+          <label class="dashboard-field">Novo horário<select id="reschedule-time"><option value="">Selecione um horário</option></select></label></div>
+          <p class="dashboard-form-error" id="reschedule-error" role="alert" hidden></p>
+          <p class="lume-reschedule-hint">A nova data respeitará os bloqueios, o expediente e a capacidade. O horário anterior será liberado.</p>
+        </div>
+        <div class="dashboard-modal-actions"><button type="button" class="dashboard-btn dashboard-btn-outline" id="reschedule-cancel">Voltar</button>
+          <button type="submit" class="dashboard-btn dashboard-btn-primary">Confirmar reagendamento</button></div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

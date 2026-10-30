@@ -1,0 +1,639 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Agendamento | Vértice Auto Detail</title>
+
+  <meta
+    name="description"
+    content="Página demonstrativa de agendamento da Vértice Auto Detail, desenvolvida pela Lume."
+  >
+
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS EXCLUSIVO -->
+  <link rel="stylesheet" href="css/agenda.css">
+
+  <!-- ESTADO COMPARTILHADO DA DEMONSTRAÇÃO -->
+  <script src="js/demo-state.js" defer></script>
+
+  <!-- SISTEMA DE AGENDAMENTO -->
+  <script src="js/agenda.js" defer></script>
+
+</head>
+
+<body class="agenda-page">
+
+  <!-- =====================================
+       CABEÇALHO SIMPLIFICADO
+  ====================================== -->
+
+  <header class="booking-header">
+
+    <div class="booking-header-content">
+
+      <a
+        href="index.html"
+        class="booking-logo"
+        aria-label="Voltar para a Vértice Auto Detail"
+      >
+
+        <span class="booking-logo-name">
+          VÉRTICE<span>.</span>
+        </span>
+
+        <small>AUTO DETAIL</small>
+
+      </a>
+
+      <a
+        href="index.html"
+        class="booking-back-link"
+      >
+        <span aria-hidden="true">&larr;</span>
+        Voltar ao site
+      </a>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- =====================================
+         APRESENTAÇÃO
+    ====================================== -->
+
+    <section
+      class="agenda-section"
+      id="agendamento"
+    >
+
+      <div class="agenda-container">
+
+        <div class="agenda-intro">
+
+          <span class="section-tag">
+            LUME AGENDA
+          </span>
+
+          <h1>
+            Seu próximo cuidado
+            <span>começa aqui.</span>
+          </h1>
+
+          <p>
+            Escolha o serviço ideal para seu veículo
+            e simule uma solicitação de horário
+            em poucos passos.
+          </p>
+
+        </div>
+
+        <!-- =====================================
+             CAIXA DO AGENDAMENTO
+        ====================================== -->
+
+        <div class="agenda-shell" id="agenda-shell">
+
+          <div class="agenda-head">
+
+            <div>
+
+              <span class="agenda-eyebrow">
+                AGENDAMENTO ONLINE
+              </span>
+
+              <h2>
+                Agende seu atendimento
+              </h2>
+
+            </div>
+
+            <span class="agenda-demo-pill">
+              DEMONSTRAÇÃO
+            </span>
+
+          </div>
+
+          <p class="agenda-demo-note" role="note">
+            Demonstração do Lume Agenda: solicitações fictícias,
+            salvas somente neste navegador. Nenhuma reserva real
+            é realizada.
+          </p>
+
+          <!-- =====================================
+               INDICADORES DAS ETAPAS
+          ====================================== -->
+
+          <ol
+            class="agenda-progress"
+            id="agenda-progress"
+            aria-label="Etapas do agendamento"
+          >
+
+            <li class="is-active" aria-current="step">
+
+              <span>01</span>
+              Serviço
+
+            </li>
+
+            <li>
+
+              <span>02</span>
+              Data e horário
+
+            </li>
+
+            <li>
+
+              <span>03</span>
+              Seus dados
+
+            </li>
+
+          </ol>
+
+          <!-- =====================================
+               FORMULÁRIO
+          ====================================== -->
+
+          <form id="agenda-form" novalidate>
+
+            <!-- =====================================
+                 ETAPA 1 — SERVIÇO
+            ====================================== -->
+
+            <fieldset
+              class="agenda-step"
+              id="agenda-step-1"
+            >
+
+              <legend class="agenda-step-title">
+                Selecione o serviço desejado
+              </legend>
+
+              <p class="agenda-step-subtitle">
+                Escolha uma das opções disponíveis
+                em nosso catálogo demonstrativo.
+              </p>
+
+              <div
+                class="agenda-service-grid"
+                id="agenda-service-grid"
+                role="radiogroup"
+                aria-label="Selecione um serviço"
+              ></div>
+
+              <p
+                class="agenda-error"
+                id="agenda-error-1"
+                role="alert"
+                hidden
+              ></p>
+
+              <div class="agenda-actions agenda-actions-right">
+
+                <button
+                  type="button"
+                  class="agenda-btn agenda-btn-primary"
+                  id="agenda-next-1"
+                >
+                  Continuar
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+
+              </div>
+
+            </fieldset>
+
+            <!-- =====================================
+                 ETAPA 2 — DATA E HORÁRIO
+            ====================================== -->
+
+            <fieldset
+              class="agenda-step"
+              id="agenda-step-2"
+              hidden
+            >
+
+              <legend class="agenda-step-title">
+                Escolha a data e o horário
+              </legend>
+
+              <p class="agenda-step-subtitle">
+                Selecione uma data para visualizar
+                os horários demonstrativos.
+              </p>
+
+              <div class="agenda-date-layout">
+
+                <!-- CALENDÁRIO -->
+
+                <div class="agenda-calendar-panel">
+
+                  <div class="agenda-calendar-top">
+
+                    <h3 id="agenda-month-label"></h3>
+
+                    <div class="agenda-month-actions">
+
+                      <button
+                        type="button"
+                        id="agenda-month-prev"
+                        aria-label="Mês anterior"
+                      >
+                        &lsaquo;
+                      </button>
+
+                      <button
+                        type="button"
+                        id="agenda-month-next"
+                        aria-label="Próximo mês"
+                      >
+                        &rsaquo;
+                      </button>
+
+                    </div>
+
+                  </div>
+
+                  <div
+                    class="agenda-weekdays"
+                    aria-hidden="true"
+                  >
+
+                    <span>Dom</span>
+                    <span>Seg</span>
+                    <span>Ter</span>
+                    <span>Qua</span>
+                    <span>Qui</span>
+                    <span>Sex</span>
+                    <span>Sáb</span>
+
+                  </div>
+
+                  <div
+                    class="agenda-calendar-days"
+                    id="agenda-calendar-days"
+                    aria-label="Selecione o dia do agendamento"
+                  ></div>
+
+                  <div class="agenda-calendar-legend" aria-label="Legenda do calendário">
+                    <span><i class="is-available" aria-hidden="true"></i>Selecionado</span>
+                    <span><i class="is-closed" aria-hidden="true"></i>Fechado</span>
+                    <span><i class="is-full" aria-hidden="true"></i>Sem vagas</span>
+                    <span><i class="is-past" aria-hidden="true"></i>Data passada</span>
+                  </div>
+
+                  <p class="agenda-calendar-help">
+                    Datas anteriores a hoje não podem
+                    ser selecionadas.
+                  </p>
+
+                </div>
+
+                <!-- HORÁRIOS -->
+
+                <div class="agenda-hours-panel">
+
+                  <h3>
+                    Horários disponíveis
+                  </h3>
+
+                  <p id="agenda-hours-intro">
+                    Selecione uma data no calendário.
+                  </p>
+
+                  <div
+                    class="agenda-hours-grid"
+                    id="agenda-hours-grid"
+                    role="group"
+                    aria-label="Horários"
+                  ></div>
+
+                  <p class="agenda-hours-note">
+                    Disponibilidade demonstrativa.
+                    Os horários respeitam a duração
+                    do serviço, os bloqueios e a
+                    configuração desta simulação.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <p
+                class="agenda-error"
+                id="agenda-error-2"
+                role="alert"
+                hidden
+              ></p>
+
+              <div class="agenda-actions">
+
+                <button
+                  type="button"
+                  class="agenda-btn agenda-btn-outline"
+                  id="agenda-back-2"
+                >
+                  &larr; Voltar
+                </button>
+
+                <button
+                  type="button"
+                  class="agenda-btn agenda-btn-primary"
+                  id="agenda-next-2"
+                >
+                  Continuar
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+
+              </div>
+
+            </fieldset>
+
+            <!-- =====================================
+                 ETAPA 3 — DADOS DO CLIENTE
+            ====================================== -->
+
+            <fieldset
+              class="agenda-step"
+              id="agenda-step-3"
+              hidden
+            >
+
+              <legend class="agenda-step-title">
+                Estamos quase lá!
+              </legend>
+
+              <p class="agenda-step-subtitle">
+                Preencha seus dados e confira o
+                resumo da simulação.
+              </p>
+
+              <div class="agenda-form-grid">
+
+                <!-- NOME -->
+
+                <label class="agenda-field">
+
+                  Nome completo <span>*</span>
+
+                  <input
+                    type="text"
+                    id="agenda-name"
+                    name="name"
+                    autocomplete="off"
+                    maxlength="100"
+                    placeholder="Use um nome fictício"
+                    required
+                  >
+
+                </label>
+
+                <!-- WHATSAPP -->
+
+                <label class="agenda-field">
+
+                  WhatsApp <span>*</span>
+
+                  <input
+                    type="tel"
+                    id="agenda-phone"
+                    name="phone"
+                    autocomplete="off"
+                    inputmode="tel"
+                    maxlength="20"
+                    placeholder="(21) 99999-9999"
+                    required
+                  >
+
+                </label>
+
+                <!-- VEÍCULO -->
+
+                <label class="agenda-field agenda-field-full">
+
+                  Veículo <span>*</span>
+
+                  <input
+                    type="text"
+                    id="agenda-vehicle"
+                    name="vehicle"
+                    maxlength="120"
+                    placeholder="Ex.: Volkswagen Polo 2022"
+                    required
+                  >
+
+                </label>
+
+                <!-- OBSERVAÇÕES -->
+
+                <label class="agenda-field agenda-field-full">
+
+                  Observações (opcional)
+
+                  <textarea
+                    id="agenda-notes"
+                    name="notes"
+                    rows="4"
+                    maxlength="600"
+                    placeholder="Exemplo de observação fictícia"
+                  ></textarea>
+
+                </label>
+
+              </div>
+
+              <!-- RESUMO -->
+
+              <div class="agenda-summary">
+
+                <h3>
+                  Resumo da sua solicitação
+                </h3>
+
+                <dl id="agenda-summary-list"></dl>
+
+                <p>
+                  Os valores são iniciais e poderão
+                  variar após avaliação do veículo.
+                </p>
+
+              </div>
+
+              <!-- CONSENTIMENTO -->
+
+              <label class="agenda-consent">
+
+                <input
+                  id="agenda-consent"
+                  type="checkbox"
+                  required
+                >
+
+                <span>
+                  Entendo que esta é uma demonstração
+                  e utilizarei apenas informações fictícias.
+
+                  <strong>
+                    Os dados digitados não são enviados
+                    ao banco D1. O agendamento demonstrativo
+                    utiliza informações fictícias.
+                  </strong>
+                </span>
+
+              </label>
+
+              <!-- STATUS -->
+
+              <div class="agenda-pending">
+
+                <span aria-hidden="true">
+                  ◷
+                </span>
+
+                <div>
+
+                  <strong>
+                    Pendente de confirmação
+                  </strong>
+
+                  <p>
+                    Na demonstração, o agendamento poderá
+                    ser visualizado e analisado no painel
+                    administrativo deste navegador.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <p
+                class="agenda-error"
+                id="agenda-error-3"
+                role="alert"
+                hidden
+              ></p>
+
+              <div class="agenda-actions">
+
+                <button
+                  type="button"
+                  class="agenda-btn agenda-btn-outline"
+                  id="agenda-back-3"
+                >
+                  &larr; Voltar
+                </button>
+
+                <button
+                  type="submit"
+                  class="agenda-btn agenda-btn-primary"
+                >
+                  Concluir demonstração
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+
+              </div>
+
+            </fieldset>
+
+          </form>
+
+          <!-- =====================================
+               TELA DE CONCLUSÃO DEMONSTRATIVA
+          ====================================== -->
+
+          <div
+            class="agenda-success"
+            id="agenda-success"
+            hidden
+            role="status"
+            aria-live="polite"
+          >
+
+            <span
+              class="agenda-success-icon"
+              aria-hidden="true"
+            >
+              &#10003;
+            </span>
+
+            <h2>
+              Simulação concluída!
+            </h2>
+
+            <p>
+              Sua solicitação fictícia foi registrada.
+              Ela aguarda confirmação no painel desta demonstração.
+            </p>
+
+            <p class="agenda-success-status">
+
+              Status demonstrativo:
+
+              <strong>
+                Pendente de confirmação
+              </strong>
+
+            </p>
+
+            <div
+              class="agenda-success-summary"
+              id="agenda-success-summary"
+            ></div>
+
+            <p class="agenda-success-warning">
+              Somente um agendamento fictício
+              foi criado nesta demonstração.
+              Nenhum e-mail foi enviado e
+              nenhuma reserva real foi confirmada.
+            </p>
+
+            <button
+              type="button"
+              class="agenda-btn agenda-btn-primary"
+              id="agenda-restart"
+            >
+              Nova simulação
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="booking-bottom">
+
+          <a href="index.html">
+            &larr; Voltar para a página inicial
+          </a>
+
+          <p>
+            Projeto demonstrativo desenvolvido pela Lume.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

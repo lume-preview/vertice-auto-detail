@@ -1,0 +1,1780 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vértice Auto Detail | Estética Automotiva Premium</title>
+
+  <meta
+    name="description"
+    content="Projeto demonstrativo de estética automotiva premium desenvolvido pela Lume."
+  >
+
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- JAVASCRIPT -->
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- =====================================
+       CABEÇALHO
+  ====================================== -->
+
+  <header class="header" id="header">
+
+    <div class="header-content">
+
+      <a
+        href="#inicio"
+        class="logo"
+        aria-label="Vértice Auto Detail - Início"
+      >
+        <span class="logo-nome">
+          VÉRTICE<span>.</span>
+        </span>
+
+        <small>AUTO DETAIL</small>
+      </a>
+
+      <nav class="nav" id="menu" aria-label="Menu principal">
+
+        <a href="#inicio" class="nav-link active">Início</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#galeria" class="nav-link">Galeria</a>
+        <a href="#contato" class="nav-link">Contato</a>
+
+        <a href="admin/index.html" class="nav-link lume-demo-mobile" aria-label="Experimentar o painel administrativo demonstrativo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+          Painel Administrador
+        </a>
+
+        <a href="agendamento.html" class="btn nav-mobile-cta">
+          Agendar horário
+        </a>
+
+      </nav>
+
+      <div class="header-actions">
+      <a href="admin/index.html" class="lume-demo-access" aria-label="Experimentar o painel administrativo demonstrativo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+        Painel Administrador
+      </a>
+
+      <a href="agendamento.html" class="btn btn-header">
+        Agendar horário
+      </a>
+
+      </div>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-controls="menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- =====================================
+         1. HERO
+    ====================================== -->
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+
+        <div class="hero-text">
+
+          <span class="hero-tag">
+            ESTÉTICA AUTOMOTIVA PREMIUM
+          </span>
+
+          <h1>
+            Seu carro merece
+            <span>outro nível.</span>
+          </h1>
+
+          <p>
+            Cuidado em cada detalhe. Tecnologia,
+            precisão e acabamento para valorizar
+            o seu veículo.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              href="agendamento.html"
+              class="btn btn-primary"
+            >
+              Agendar atendimento
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+
+            <a
+              href="#servicos"
+              class="btn btn-outline"
+            >
+              Conheça nossos serviços
+            </a>
+
+          </div>
+
+          <div class="hero-info">
+
+            <span class="info-line"></span>
+
+            <p>
+              O cuidado que seu carro merece.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        EXPLORE
+        <span class="scroll-line"></span>
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         2. NOSSOS SERVIÇOS
+    ====================================== -->
+
+    <section class="services" id="servicos">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <span class="section-tag">
+            NOSSOS SERVIÇOS
+          </span>
+
+          <h2>
+            Cuidado completo para valorizar
+            cada detalhe.
+          </h2>
+
+          <p>
+            Tratamentos automotivos desenvolvidos
+            para elevar a estética, a proteção
+            e a apresentação do seu veículo.
+          </p>
+
+        </div>
+
+        <!-- Navegação auxiliar do carrossel: aparece somente no mobile -->
+        <div class="services-carousel-controls" aria-label="Navegar pelos serviços">
+          <span class="services-carousel-hint">Deslize para ver mais serviços</span>
+          <div class="services-carousel-arrows">
+            <button type="button" class="services-carousel-arrow" id="services-prev" aria-label="Serviço anterior" disabled><span aria-hidden="true">←</span></button>
+            <button type="button" class="services-carousel-arrow" id="services-next" aria-label="Próximo serviço"><span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- SERVIÇO 1 -->
+
+          <article class="service-card">
+
+            <div class="service-image">
+
+              <img
+                src="assets/imagens/lavagem-detalhada.jpg"
+                alt="Serviço de lavagem detalhada automotiva"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="service-content">
+
+              <h3>
+                Lavagem detalhada
+              </h3>
+
+              <p class="service-description">
+                Limpeza cuidadosa da parte externa
+                com atenção aos acabamentos, brilho
+                e conservação da pintura.
+              </p>
+
+              <div class="service-details">
+
+                <div class="service-price">
+
+                  <span class="price-label">
+                    A partir de
+                  </span>
+
+                  <strong>
+                    R$ 120,00
+                  </strong>
+
+                </div>
+
+                <div class="service-duration">
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="17"
+                    height="17"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 7v5l3 2"></path>
+                  </svg>
+
+                  <span>
+                    2 horas
+                  </span>
+
+                </div>
+
+              </div>
+
+              <a
+                href="agendamento.html?servico=lavagem-detalhada"
+                class="service-link"
+                data-servico="lavagem-detalhada"
+              >
+                Agendar serviço
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- SERVIÇO 2 -->
+
+          <article class="service-card">
+
+            <div class="service-image">
+
+              <img
+                src="assets/imagens/polimento-tecnico.jpg"
+                alt="Serviço de polimento técnico automotivo"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="service-content">
+
+              <h3>
+                Polimento técnico
+              </h3>
+
+              <p class="service-description">
+                Correção visual e realce do brilho
+                da pintura para recuperar a aparência
+                e destacar o acabamento.
+              </p>
+
+              <div class="service-details">
+
+                <div class="service-price">
+
+                  <span class="price-label">
+                    A partir de
+                  </span>
+
+                  <strong>
+                    R$ 350,00
+                  </strong>
+
+                </div>
+
+                <div class="service-duration">
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="17"
+                    height="17"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 7v5l3 2"></path>
+                  </svg>
+
+                  <span>
+                    4 horas
+                  </span>
+
+                </div>
+
+              </div>
+
+              <a
+                href="agendamento.html?servico=polimento-tecnico"
+                class="service-link"
+                data-servico="polimento-tecnico"
+              >
+                Agendar serviço
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- SERVIÇO 3 -->
+
+          <article class="service-card">
+
+            <div class="service-image">
+
+              <img
+                src="assets/imagens/higienizacao-interna.jpg"
+                alt="Serviço de higienização interna automotiva"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="service-content">
+
+              <h3>
+                Higienização interna
+              </h3>
+
+              <p class="service-description">
+                Limpeza interna detalhada de bancos,
+                painéis, carpetes e superfícies,
+                promovendo mais conforto e renovação.
+              </p>
+
+              <div class="service-details">
+
+                <div class="service-price">
+
+                  <span class="price-label">
+                    A partir de
+                  </span>
+
+                  <strong>
+                    R$ 250,00
+                  </strong>
+
+                </div>
+
+                <div class="service-duration">
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="17"
+                    height="17"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 7v5l3 2"></path>
+                  </svg>
+
+                  <span>
+                    3 horas
+                  </span>
+
+                </div>
+
+              </div>
+
+              <a
+                href="agendamento.html?servico=higienizacao-interna"
+                class="service-link"
+                data-servico="higienizacao-interna"
+              >
+                Agendar serviço
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- SERVIÇO 4 -->
+
+          <article class="service-card">
+
+            <div class="service-image">
+
+              <img
+                src="assets/imagens/vitrificacao.jpg"
+                alt="Serviço de vitrificação automotiva"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="service-content">
+
+              <h3>
+                Vitrificação
+              </h3>
+
+              <p class="service-description">
+                Tratamento de proteção com acabamento
+                sofisticado para ajudar na conservação
+                e destacar o visual do veículo.
+              </p>
+
+              <div class="service-details">
+
+                <div class="service-price">
+
+                  <span class="price-label">
+                    A partir de
+                  </span>
+
+                  <strong>
+                    R$ 600,00
+                  </strong>
+
+                </div>
+
+                <div class="service-duration">
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="17"
+                    height="17"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 7v5l3 2"></path>
+                  </svg>
+
+                  <span>
+                    6 horas
+                  </span>
+
+                </div>
+
+              </div>
+
+              <a
+                href="agendamento.html?servico=vitrificacao"
+                class="service-link"
+                data-servico="vitrificacao"
+              >
+                Agendar serviço
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- SERVIÇO 5 -->
+
+          <article class="service-card">
+
+            <div class="service-image">
+
+              <img
+                src="assets/imagens/limpeza-motor.jpg"
+                alt="Serviço de limpeza de motor automotivo"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="service-content">
+
+              <h3>
+                Limpeza de motor
+              </h3>
+
+              <p class="service-description">
+                Limpeza técnica do compartimento
+                do motor, com foco em cuidado,
+                apresentação e detalhamento visual.
+              </p>
+
+              <div class="service-details">
+
+                <div class="service-price">
+
+                  <span class="price-label">
+                    A partir de
+                  </span>
+
+                  <strong>
+                    R$ 100,00
+                  </strong>
+
+                </div>
+
+                <div class="service-duration">
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="17"
+                    height="17"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 7v5l3 2"></path>
+                  </svg>
+
+                  <span>
+                    1 hora
+                  </span>
+
+                </div>
+
+              </div>
+
+              <a
+                href="agendamento.html?servico=limpeza-motor"
+                class="service-link"
+                data-servico="limpeza-motor"
+              >
+                Agendar serviço
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- SERVIÇO 6 -->
+
+          <article class="service-card">
+
+            <div class="service-image">
+
+              <img
+                src="assets/imagens/revitalizacao-farois.jpg"
+                alt="Serviço de revitalização de faróis automotivos"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="service-content">
+
+              <h3>
+                Revitalização de faróis
+              </h3>
+
+              <p class="service-description">
+                Recuperação visual dos faróis
+                para melhorar a estética e valorizar
+                o acabamento frontal do veículo.
+              </p>
+
+              <div class="service-details">
+
+                <div class="service-price">
+
+                  <span class="price-label">
+                    A partir de
+                  </span>
+
+                  <strong>
+                    R$ 150,00
+                  </strong>
+
+                </div>
+
+                <div class="service-duration">
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="17"
+                    height="17"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 7v5l3 2"></path>
+                  </svg>
+
+                  <span>
+                    2 horas
+                  </span>
+
+                </div>
+
+              </div>
+
+              <a
+                href="agendamento.html?servico=revitalizacao-farois"
+                class="service-link"
+                data-servico="revitalizacao-farois"
+              >
+                Agendar serviço
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         3. SOBRE NÓS
+    ====================================== -->
+
+    <section class="about" id="sobre">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-image">
+
+            <img
+              src="assets/imagens/sobre-vertice.jpg"
+              alt="Profissional realizando detalhamento em um veículo preto"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="about-content">
+
+            <span class="section-tag">
+              SOBRE NÓS
+            </span>
+
+            <h2>
+              Estética automotiva com atenção real
+              a cada detalhe.
+            </h2>
+
+            <p class="about-intro">
+              A Vértice Auto Detail é uma marca demonstrativa
+              criada para representar um atendimento premium,
+              cuidadoso e moderno no segmento de estética
+              automotiva.
+            </p>
+
+            <p>
+              Nosso conceito une acabamento refinado, processos
+              bem executados e uma experiência visual que
+              transmite confiança, sofisticação e valorização
+              do veículo em cada etapa do atendimento.
+            </p>
+
+            <div class="about-highlights">
+
+              <article class="highlight-card">
+
+                <strong>
+                  Atendimento com hora marcada
+                </strong>
+
+                <span>
+                  Mais organização, conforto e praticidade
+                  para o cliente.
+                </span>
+
+              </article>
+
+              <article class="highlight-card">
+
+                <strong>
+                  Processos cuidadosos
+                </strong>
+
+                <span>
+                  Serviços pensados para preservar estética,
+                  acabamento e apresentação.
+                </span>
+
+              </article>
+
+              <article class="highlight-card">
+
+                <strong>
+                  Experiência premium
+                </strong>
+
+                <span>
+                  Visual sofisticado, atenção aos detalhes
+                  e padrão profissional.
+                </span>
+
+              </article>
+
+              <article class="highlight-card">
+
+                <strong>
+                  Agendamento integrado
+                </strong>
+
+                <span>
+                  Estrutura preparada para funcionar
+                  com o Lume Agenda.
+                </span>
+
+              </article>
+
+            </div>
+
+            <div class="about-stats">
+
+              <div class="about-stat">
+
+                <strong>
+                  6
+                </strong>
+
+                <span>
+                  serviços demonstrativos
+                </span>
+
+              </div>
+
+              <div class="about-stat">
+
+                <strong>
+                  100%
+                </strong>
+
+                <span>
+                  visual responsivo
+                </span>
+
+              </div>
+
+              <div class="about-stat">
+
+                <strong>
+                  Lume
+                </strong>
+
+                <span>
+                  projeto desenvolvido
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="about-actions">
+
+              <a
+                href="#servicos"
+                class="btn btn-primary"
+              >
+                Ver serviços
+              </a>
+
+              <a
+                href="agendamento.html"
+                class="btn btn-outline"
+              >
+                Agendar horário
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         4. GALERIA
+    ====================================== -->
+
+    <section class="gallery" id="galeria">
+
+      <div class="container">
+
+        <div class="gallery-top">
+
+          <div class="gallery-heading">
+
+            <span class="section-tag">
+              NOSSA GALERIA
+            </span>
+
+            <h2>
+              Cada detalhe faz
+              <span>a diferença.</span>
+            </h2>
+
+            <p>
+              Conheça de perto o cuidado, a dedicação
+              e o acabamento que valorizam cada veículo.
+            </p>
+
+          </div>
+
+          <div class="gallery-controls">
+
+            <button
+              type="button"
+              class="gallery-arrow"
+              id="gallery-prev"
+              aria-label="Imagem anterior"
+            >
+              <span aria-hidden="true">&larr;</span>
+            </button>
+
+            <button
+              type="button"
+              class="gallery-arrow"
+              id="gallery-next"
+              aria-label="Próxima imagem"
+            >
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+
+          </div>
+
+        </div>
+
+        <div
+          class="gallery-viewport"
+          id="gallery-viewport"
+          aria-label="Galeria de imagens automotivas"
+          aria-roledescription="carrossel"
+        >
+
+          <div class="gallery-track" id="gallery-track">
+
+            <!-- FOTO 1 -->
+
+            <figure class="gallery-slide">
+
+              <button
+                type="button"
+                class="gallery-image-button"
+                aria-label="Ampliar imagem de lavagem detalhada"
+              >
+
+                <img
+                  src="assets/imagens/galeria-1.jpg"
+                  alt="Lavagem detalhada de um Volkswagen com espuma"
+                  loading="lazy"
+                >
+
+                <span
+                  class="gallery-zoom"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+
+              </button>
+
+              <figcaption>
+
+                <span>
+                  01 / 06
+                </span>
+
+                <strong>
+                  Lavagem detalhada
+                </strong>
+
+              </figcaption>
+
+            </figure>
+
+            <!-- FOTO 2 -->
+
+            <figure class="gallery-slide">
+
+              <button
+                type="button"
+                class="gallery-image-button"
+                aria-label="Ampliar imagem de polimento técnico"
+              >
+
+                <img
+                  src="assets/imagens/galeria-2.jpg"
+                  alt="Polimento técnico realizado em carro prata"
+                  loading="lazy"
+                >
+
+                <span
+                  class="gallery-zoom"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+
+              </button>
+
+              <figcaption>
+
+                <span>
+                  02 / 06
+                </span>
+
+                <strong>
+                  Polimento técnico
+                </strong>
+
+              </figcaption>
+
+            </figure>
+
+            <!-- FOTO 3 -->
+
+            <figure class="gallery-slide">
+
+              <button
+                type="button"
+                class="gallery-image-button"
+                aria-label="Ampliar imagem de higienização interna"
+              >
+
+                <img
+                  src="assets/imagens/galeria-3.jpg"
+                  alt="Higienização de bancos e interior automotivo"
+                  loading="lazy"
+                >
+
+                <span
+                  class="gallery-zoom"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+
+              </button>
+
+              <figcaption>
+
+                <span>
+                  03 / 06
+                </span>
+
+                <strong>
+                  Higienização interna
+                </strong>
+
+              </figcaption>
+
+            </figure>
+
+            <!-- FOTO 4 -->
+
+            <figure class="gallery-slide">
+
+              <button
+                type="button"
+                class="gallery-image-button"
+                aria-label="Ampliar imagem de proteção da pintura"
+              >
+
+                <img
+                  src="assets/imagens/galeria-4.jpg"
+                  alt="Carro preto com pintura brilhante"
+                  loading="lazy"
+                >
+
+                <span
+                  class="gallery-zoom"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+
+              </button>
+
+              <figcaption>
+
+                <span>
+                  04 / 06
+                </span>
+
+                <strong>
+                  Proteção e brilho
+                </strong>
+
+              </figcaption>
+
+            </figure>
+
+            <!-- FOTO 5 -->
+
+            <figure class="gallery-slide">
+
+              <button
+                type="button"
+                class="gallery-image-button"
+                aria-label="Ampliar imagem de limpeza de motor"
+              >
+
+                <img
+                  src="assets/imagens/galeria-5.jpg"
+                  alt="Limpeza e detalhamento do motor"
+                  loading="lazy"
+                >
+
+                <span
+                  class="gallery-zoom"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+
+              </button>
+
+              <figcaption>
+
+                <span>
+                  05 / 06
+                </span>
+
+                <strong>
+                  Limpeza de motor
+                </strong>
+
+              </figcaption>
+
+            </figure>
+
+            <!-- FOTO 6 -->
+
+            <figure class="gallery-slide">
+
+              <button
+                type="button"
+                class="gallery-image-button"
+                aria-label="Ampliar imagem de revitalização de faróis"
+              >
+
+                <img
+                  src="assets/imagens/galeria-6.jpg"
+                  alt="Revitalização de farol automotivo"
+                  loading="lazy"
+                >
+
+                <span
+                  class="gallery-zoom"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+
+              </button>
+
+              <figcaption>
+
+                <span>
+                  06 / 06
+                </span>
+
+                <strong>
+                  Revitalização de faróis
+                </strong>
+
+              </figcaption>
+
+            </figure>
+
+          </div>
+
+        </div>
+
+        <!-- INDICADORES -->
+
+        <div class="gallery-bottom">
+
+          <div
+            class="gallery-dots"
+            id="gallery-dots"
+            aria-label="Escolher imagem da galeria"
+          >
+
+            <button
+              type="button"
+              class="gallery-dot active"
+              aria-label="Ir para imagem 1"
+              aria-current="true"
+            ></button>
+
+            <button
+              type="button"
+              class="gallery-dot"
+              aria-label="Ir para imagem 2"
+            ></button>
+
+            <button
+              type="button"
+              class="gallery-dot"
+              aria-label="Ir para imagem 3"
+            ></button>
+
+            <button
+              type="button"
+              class="gallery-dot"
+              aria-label="Ir para imagem 4"
+            ></button>
+
+            <button
+              type="button"
+              class="gallery-dot"
+              aria-label="Ir para imagem 5"
+            ></button>
+
+            <button
+              type="button"
+              class="gallery-dot"
+              aria-label="Ir para imagem 6"
+            ></button>
+
+          </div>
+
+          <button
+            type="button"
+            class="gallery-play-toggle"
+            id="gallery-play-toggle"
+            aria-label="Pausar reprodução automática"
+            aria-pressed="false"
+          >
+
+            <span
+              id="gallery-play-icon"
+              aria-hidden="true"
+            >
+              &#10074;&#10074;
+            </span>
+
+            <span id="gallery-play-text">
+              Pausar
+            </span>
+
+          </button>
+
+        </div>
+
+        <p class="gallery-note">
+          Imagens ilustrativas de um projeto demonstrativo.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         LIGHTBOX DA GALERIA
+    ====================================== -->
+
+    <div
+      class="gallery-lightbox"
+      id="gallery-lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Visualização ampliada da galeria"
+      aria-hidden="true"
+      hidden
+    >
+
+      <button
+        type="button"
+        class="lightbox-close"
+        id="lightbox-close"
+        aria-label="Fechar imagem ampliada"
+      >
+        &times;
+      </button>
+
+      <button
+        type="button"
+        class="lightbox-arrow lightbox-prev"
+        id="lightbox-prev"
+        aria-label="Imagem anterior"
+      >
+        &larr;
+      </button>
+
+      <div class="lightbox-content">
+
+        <img
+          id="lightbox-image"
+          src=""
+          alt=""
+        >
+
+        <p id="lightbox-caption"></p>
+
+      </div>
+
+      <button
+        type="button"
+        class="lightbox-arrow lightbox-next"
+        id="lightbox-next"
+        aria-label="Próxima imagem"
+      >
+        &rarr;
+      </button>
+
+    </div>
+
+  </main>
+
+  <!-- =====================================
+       5. RODAPÉ COMPLETO
+
+       ID CONTATO TRANSFERIDO PARA AQUI
+  ====================================== -->
+
+  <footer
+    class="footer"
+    id="contato"
+  >
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- =================================
+             COLUNA 1 — MARCA
+        ================================== -->
+
+        <div class="footer-brand">
+
+          <a
+            href="#inicio"
+            class="footer-logo"
+            aria-label="Voltar ao início da Vértice Auto Detail"
+          >
+
+            <span class="footer-logo-name">
+              VÉRTICE<span>.</span>
+            </span>
+
+            <small>
+              AUTO DETAIL
+            </small>
+
+          </a>
+
+          <p class="footer-description">
+            Estética automotiva com atenção real
+            a cada detalhe. Cuidado, precisão e
+            acabamento para valorizar seu veículo.
+          </p>
+
+          <a
+            href="agendamento.html"
+            class="footer-booking-link"
+          >
+            Agendar atendimento
+
+            <span aria-hidden="true">
+              &rarr;
+            </span>
+          </a>
+
+          <p class="footer-demo-label">
+            Marca e serviços demonstrativos.
+          </p>
+
+        </div>
+
+        <!-- =================================
+             COLUNA 2 — NAVEGAÇÃO
+        ================================== -->
+
+        <nav
+          class="footer-navigation"
+          aria-label="Navegação do rodapé"
+        >
+
+          <h2 class="footer-heading">
+            Navegação
+          </h2>
+
+          <ul class="footer-nav-list">
+
+            <li>
+              <a href="#inicio">
+                Início
+              </a>
+            </li>
+
+            <li>
+              <a href="#servicos">
+                Serviços
+              </a>
+            </li>
+
+            <li>
+              <a href="#sobre">
+                Sobre nós
+              </a>
+            </li>
+
+            <li>
+              <a href="#galeria">
+                Galeria
+              </a>
+            </li>
+
+            <li>
+              <a href="#contato">
+                Contato
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+        <!-- =================================
+             COLUNA 3 — CONTATO
+        ================================== -->
+
+        <div class="footer-contact">
+
+          <h2 class="footer-heading">
+            Contato
+          </h2>
+
+          <div class="footer-contact-list">
+
+            <!-- E-MAIL -->
+
+            <div class="footer-contact-item">
+
+              <span
+                class="footer-contact-icon"
+                aria-hidden="true"
+              >
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+
+                  <rect
+                    x="3"
+                    y="5"
+                    width="18"
+                    height="14"
+                    rx="2"
+                  ></rect>
+
+                  <path d="M3 7l9 6 9-6"></path>
+
+                </svg>
+
+              </span>
+
+              <div class="footer-contact-text">
+
+                <strong>
+                  E-mail
+                </strong>
+
+                <span>
+                  contato@vertice.example
+                </span>
+
+                <small>
+                  Endereço demonstrativo — sem caixa de entrada.
+                </small>
+
+              </div>
+
+            </div>
+
+            <!-- ENDEREÇO -->
+
+            <div class="footer-contact-item">
+
+              <span
+                class="footer-contact-icon"
+                aria-hidden="true"
+              >
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+
+                  <path
+                    d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"
+                  ></path>
+
+                  <circle
+                    cx="12"
+                    cy="10"
+                    r="2.5"
+                  ></circle>
+
+                </svg>
+
+              </span>
+
+              <div class="footer-contact-text">
+
+                <strong>
+                  Endereço ilustrativo
+                </strong>
+
+                <address>
+                  Praça Mauá, 1 — Centro
+
+                  <span>
+                    Rio de Janeiro — RJ
+                  </span>
+
+                  <span>
+                    CEP: 20081-240
+                  </span>
+                </address>
+
+                <small>
+                  Referência real: Museu do Amanhã.
+                  Não é o endereço da Vértice.
+                </small>
+
+              </div>
+
+            </div>
+
+            <!-- INSTAGRAM -->
+
+            <div class="footer-contact-item">
+
+              <span
+                class="footer-contact-icon"
+                aria-hidden="true"
+              >
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+
+                  <rect
+                    x="2"
+                    y="2"
+                    width="20"
+                    height="20"
+                    rx="5"
+                  ></rect>
+
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                  ></circle>
+
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  ></circle>
+
+                </svg>
+
+              </span>
+
+              <div class="footer-contact-text">
+
+                <strong>
+                  Instagram
+                </strong>
+
+                <span>
+                  @vertice.autodetail
+                </span>
+
+                <small>
+                  Nome demonstrativo — perfil não verificado.
+                </small>
+
+              </div>
+
+            </div>
+
+            <!-- HORÁRIO -->
+
+            <div class="footer-contact-item">
+
+              <span
+                class="footer-contact-icon"
+                aria-hidden="true"
+              >
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                  ></circle>
+
+                  <path d="M12 7v5l3 2"></path>
+
+                </svg>
+
+              </span>
+
+              <div class="footer-contact-text">
+
+                <strong>
+                  Horário de atendimento
+                </strong>
+
+                <span>
+                  07:00 às 17:00
+                </span>
+
+                <small>
+                  Horário configurado na agenda demonstrativa.
+                </small>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- =================================
+             COLUNA 4 — GOOGLE MAPS
+        ================================== -->
+
+        <div class="footer-location">
+
+          <h2 class="footer-heading">
+            Localização
+          </h2>
+
+          <p class="footer-location-description">
+            Visualização ilustrativa de uma localização
+            no Centro do Rio de Janeiro.
+          </p>
+
+          <details class="footer-map-disclosure">
+            <summary class="footer-map-toggle">
+              <span class="footer-map-open-label">Ver localização</span>
+              <span class="footer-map-close-label">Ocultar localização</span>
+              <span aria-hidden="true" class="footer-map-chevron">⌄</span>
+            </summary>
+
+          <div class="footer-map">
+
+            <iframe
+              title="Mapa ilustrativo da Praça Mauá, 1, Rio de Janeiro"
+              src="https://maps.google.com/maps?q=Pra%C3%A7a%20Mau%C3%A1%2C%201%2C%20Centro%2C%20Rio%20de%20Janeiro%2C%20RJ%2C%20Brasil&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+
+          </div>
+          </details>
+
+          <a
+            class="footer-map-link"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Pra%C3%A7a%20Mau%C3%A1%2C%201%2C%20Centro%2C%20Rio%20de%20Janeiro%2C%20RJ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            Abrir no Google Maps
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+
+              <path d="M7 17 17 7"></path>
+
+              <path d="M8 7h9v9"></path>
+
+            </svg>
+
+          </a>
+
+          <p class="footer-location-note">
+            Localização utilizada somente para demonstração.
+            A Vértice Auto Detail não funciona neste endereço.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- =================================
+           LINHA INFERIOR
+      ================================== -->
+
+      <div class="footer-bottom">
+
+        <p class="footer-copyright">
+          &copy; 2026 Vértice Auto Detail.
+          Projeto demonstrativo.
+        </p>
+
+        <a
+          href="admin/index.html"
+          class="footer-admin-link"
+          aria-label="Acessar a área administrativa"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+
+            <rect
+              x="5"
+              y="10"
+              width="14"
+              height="11"
+              rx="2"
+            ></rect>
+
+            <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+
+          </svg>
+
+          <span>
+            Área administrativa
+          </span>
+
+        </a>
+
+      </div>
+
+      <!-- =================================
+           CRÉDITOS
+      ================================== -->
+
+      <div class="footer-credits">
+
+        <span>
+          Projeto demonstrativo desenvolvido pela
+          <strong>Lume.</strong>
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- Contato comercial da Lume (nao da empresa demonstrativa) -->
+  <a
+    class="lume-whatsapp-float"
+    href="https://wa.me/5521984588494?text=Ol%C3%A1%21%20Conheci%20a%20demonstra%C3%A7%C3%A3o%20do%20Lume%20Agenda%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20sistema%20de%20agendamentos."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar com a Lume pelo WhatsApp"
+    title="Falar com a Lume pelo WhatsApp"
+  >
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16.004 3C8.833 3 3 8.831 3 16c0 2.295.602 4.536 1.743 6.512L3 29l6.658-1.747A12.93 12.93 0 0 0 16 29c7.168 0 13-5.832 13-13S23.172 3 16.004 3Zm0 23.633a10.59 10.59 0 0 1-5.398-1.48l-.388-.23-3.953 1.035 1.055-3.85-.253-.396A10.566 10.566 0 0 1 5.366 16c0-5.863 4.773-10.635 10.64-10.635 5.863 0 10.633 4.772 10.633 10.635 0 5.864-4.77 10.633-10.635 10.633Zm5.835-7.964c-.317-.158-1.87-.922-2.162-1.027-.29-.105-.502-.157-.713.16-.212.317-.819 1.026-1.004 1.238-.184.212-.37.238-.687.08-.317-.16-1.339-.493-2.552-1.573-.945-.843-1.582-1.885-1.767-2.201-.184-.318-.02-.49.139-.647.142-.142.317-.37.475-.554.158-.185.212-.317.317-.53.106-.212.053-.398-.026-.556-.079-.158-.713-1.716-.976-2.349-.257-.618-.519-.534-.713-.544l-.608-.01c-.212 0-.555.079-.846.397-.29.317-1.108 1.082-1.108 2.64s1.134 3.063 1.292 3.274c.159.212 2.233 3.41 5.41 4.781.755.326 1.345.52 1.804.666.758.241 1.449.207 1.995.126.609-.09 1.872-.766 2.136-1.505.265-.74.265-1.373.185-1.505-.079-.132-.29-.212-.607-.37Z"/></svg>
+  </a>
+
+</body>
+
+</html>

@@ -1,0 +1,2204 @@
+/* ==========================================
+
+   LUME AGENDA
+
+   VÃƒÆ’Ã¢â‚¬Â°RTICE AUTO DETAIL
+
+   ARQUIVO: agenda.css
+
+========================================== */
+
+/* VARIÃƒÆ’Ã‚ÂVEIS */
+
+:root {
+
+  --black: #141414;
+
+  --graphite: #272727;
+
+  --orange: #E87C32;
+
+  --white: #F5F3EF;
+
+  --gray: #A7A7A7;
+
+  --font-primary: 'Inter',sans-serif;
+
+  --font-title: 'Montserrat',sans-serif;
+
+}
+
+/* RESET */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+body {
+
+  min-height: 100vh;
+
+  color: var(--white);
+
+  background: var(--graphite);
+
+  font-family: var(--font-primary);
+
+}
+
+a {
+
+  text-decoration: none;
+
+  color: inherit;
+
+}
+
+button,
+
+input,
+
+textarea {
+
+  font: inherit;
+
+}
+
+button {
+
+  cursor: pointer;
+
+}
+
+[hidden] {
+
+  display: none !important;
+
+}
+
+/* ==========================================
+
+   CABEÃƒÆ’Ã¢â‚¬Â¡ALHO SIMPLIFICADO
+
+========================================== */
+
+.booking-header {
+
+  width: min(calc(100% - 48px),1240px);
+
+  margin: 14px auto 0;
+
+  border: 1px solid rgba(255,255,255,.17);
+
+  border-radius: 100px;
+
+  background: rgba(35,30,29,.96);
+
+  box-shadow: 0 10px 35px rgba(0,0,0,.2);
+
+}
+
+.booking-header-content {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  min-height: 68px;
+
+  padding: 10px 16px 10px 25px;
+
+}
+
+.booking-logo {
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex-shrink: 0;
+
+  font-family: var(--font-title);
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: 1.5px;
+
+}
+
+.booking-logo-name {
+
+  font-size: 23px;
+
+  color: var(--white);
+
+}
+
+.booking-logo-name span {
+
+  color: var(--orange);
+
+}
+
+.booking-logo small {
+
+  margin-top: 6px;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 4px;
+
+}
+
+.booking-back-link {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 13px 21px;
+
+  background: var(--orange);
+
+  color: #141414;
+
+  border-radius: 100px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+
+background .25s ease,
+
+    transform .25s ease;
+
+}
+
+.booking-back-link:hover {
+
+  background: #FF984F;
+
+  transform: translateY(-2px);
+
+}
+
+/* ==========================================
+
+   APRESENTAÃƒÆ’Ã¢â‚¬Â¡ÃƒÆ’Ã†â€™O
+
+========================================== */
+
+.agenda-section {
+
+  padding: 75px 0 90px;
+
+}
+
+.agenda-container {
+
+  width: min(90%,1050px);
+
+  margin: 0 auto;
+
+}
+
+.agenda-intro {
+
+  max-width: 760px;
+
+  margin-bottom: 42px;
+
+}
+
+.section-tag {
+
+  color: var(--orange);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+}
+
+.agenda-intro h1 {
+
+  font-family: var(--font-title);
+
+  font-size: clamp(35px,5vw,57px);
+
+  line-height: 1.16;
+
+  font-weight: 800;
+
+  margin: 18px 0 20px;
+
+}
+
+.agenda-intro h1 span {
+
+  display: block;
+
+  color: var(--orange);
+
+}
+
+.agenda-intro p {
+
+  max-width: 650px;
+
+  color: #C9C9C9;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+}
+
+/* ==========================================
+
+   CAIXA DE AGENDAMENTO
+
+========================================== */
+
+.agenda-shell {
+
+  background: #171717;
+
+  border: 1px solid rgba(255,255,255,.1);
+
+  border-radius: 24px;
+
+  padding: clamp(22px,4vw,46px);
+
+  box-shadow: 0 25px 80px rgba(0,0,0,.18);
+
+}
+
+.agenda-head {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+}
+
+.agenda-eyebrow {
+
+  color: var(--orange);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+}
+
+.agenda-head h2 {
+
+  font-family: var(--font-title);
+
+  font-size: clamp(23px,3vw,30px);
+
+  margin-top: 8px;
+
+}
+
+.agenda-demo-pill {
+
+  flex-shrink: 0;
+
+  padding: 9px 13px;
+
+  border-radius: 100px;
+
+  background: var(--orange);
+
+  color: #1d140f;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+}
+
+.agenda-demo-note {
+
+  margin-top: 18px;
+
+  padding: 13px 17px;
+
+  border: 1px solid rgba(232,124,50,.35);
+
+  border-radius: 10px;
+
+  background: rgba(232,124,50,.07);
+
+  color: #F0C4A3;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+}
+
+/* ==========================================
+
+   PROGRESSO DO FORMULÃƒÆ’Ã‚ÂRIO
+
+========================================== */
+
+.agenda-progress {
+
+  display: grid;
+
+  grid-template-columns: repeat(3,minmax(0,1fr));
+
+  gap: 12px;
+
+  list-style: none;
+
+  margin: 31px 0 35px;
+
+}
+
+.agenda-progress li {
+
+  padding-top: 12px;
+
+  border-top: 4px solid #464646;
+
+  color: #8F8F8F;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+}
+
+.agenda-progress li span {
+
+  margin-right: 5px;
+
+  font-size: 12px;
+
+}
+
+.agenda-progress li.is-active {
+
+  border-color: var(--orange);
+
+  color: var(--white);
+
+}
+
+.agenda-progress li.is-done {
+
+  border-color: #B75D28;
+
+  color: #C7C7C7;
+
+}
+
+/* ==========================================
+
+   ETAPAS
+
+========================================== */
+
+.agenda-step {
+
+  min-width: 0;
+
+  border: none;
+
+}
+
+.agenda-step-title {
+
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+
+  font-family: var(--font-title);
+
+  font-size: 23px;
+
+  font-weight: 800;
+
+}
+
+/* CORREÃƒÆ’Ã¢â‚¬Â¡ÃƒÆ’Ã†â€™O DO CONTORNO AZUL */
+
+.agenda-step-title:focus,
+
+.agenda-step-title:focus-visible {
+
+  outline: none;
+
+  box-shadow: none;
+
+}
+
+.agenda-step-subtitle {
+
+  margin: 12px 0 26px;
+
+  color: #AAA;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+}
+
+/* ==========================================
+
+   CARTÃƒÆ’Ã¢â‚¬Â¢ES DE SERVIÃƒÆ’Ã¢â‚¬Â¡O
+
+========================================== */
+
+.agenda-service-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2,minmax(0,1fr));
+
+  gap: 14px;
+
+}
+
+.agenda-service-option {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  width: 100%;
+
+  padding: 20px;
+
+  text-align: left;
+
+  border: 1px solid #434343;
+
+  border-radius: 13px;
+
+  background: #222;
+
+  color: var(--white);
+
+  transition:
+
+    border-color .2s,
+
+    background-color .2s;
+
+}
+
+.agenda-service-option:hover {
+
+  border-color: var(--orange);
+
+}
+
+.agenda-service-option.is-selected {
+
+  border-color: var(--orange);
+
+  background: #2B211B;
+
+}
+
+.agenda-service-radio {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 19px;
+
+  height: 19px;
+
+  border: 2px solid #999;
+
+  border-radius: 50%;
+
+}
+
+.agenda-service-option.is-selected .agenda-service-radio {
+
+  border-color: var(--orange);
+
+}
+
+.agenda-service-option.is-selected .agenda-service-radio::after {
+
+  content: "";
+
+  width: 9px;
+
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: var(--orange);
+
+}
+
+.agenda-service-text {
+
+  display: flex;
+
+  flex: 1;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  gap: 6px;
+
+}
+
+.agenda-service-text strong {
+
+  font-family: var(--font-title);
+
+  font-size: 15px;
+
+}
+
+.agenda-service-text small {
+
+  color: #BBB;
+
+  font-size: 12px;
+
+}
+
+.agenda-service-price {
+
+  color: var(--orange);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+}
+
+/* ==========================================
+
+   BOTÃƒÆ’Ã¢â‚¬Â¢ES DO FORMULÃƒÆ’Ã‚ÂRIO
+
+========================================== */
+
+.agenda-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 14px;
+
+  margin-top: 32px;
+
+}
+
+.agenda-actions-right {
+
+  justify-content: flex-end;
+
+}
+
+.agenda-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  min-height: 48px;
+
+  padding: 14px 24px;
+
+  border: 1px solid transparent;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+
+    background-color .2s,
+
+    border-color .2s,
+
+    color .2s;
+
+}
+
+.agenda-btn-primary {
+
+  background: var(--orange);
+
+  color: #141414;
+
+}
+
+.agenda-btn-primary:hover {
+
+  background: #FF984F;
+
+}
+
+.agenda-btn-outline {
+
+  border-color: #777;
+
+  background: transparent;
+
+  color: var(--white);
+
+}
+
+.agenda-btn-outline:hover {
+
+  border-color: var(--orange);
+
+  color: var(--orange);
+
+}
+
+.agenda-error {
+
+  margin-top: 17px;
+
+  color: #FFAD8C;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+}
+
+/* ==========================================
+
+   CALENDÃƒÆ’Ã‚ÂRIO
+
+========================================== */
+
+.agenda-date-layout {
+
+  display: grid;
+
+  grid-template-columns: repeat(2,minmax(0,1fr));
+
+  gap: 22px;
+
+}
+
+.agenda-calendar-panel,
+
+.agenda-hours-panel {
+
+  min-width: 0;
+
+  padding: 24px;
+
+  border: 1px solid #393939;
+
+  border-radius: 16px;
+
+  background: #202020;
+
+}
+
+.agenda-calendar-top {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+
+}
+
+.agenda-calendar-top h3,
+
+.agenda-hours-panel h3 {
+
+  font-family: var(--font-title);
+
+  font-size: 18px;
+
+}
+
+.agenda-month-actions {
+
+  display: flex;
+
+  gap: 8px;
+
+}
+
+.agenda-month-actions button {
+
+  width: 36px;
+
+  height: 36px;
+
+  border: 1px solid #555;
+
+  border-radius: 8px;
+
+  background: #2A2A2A;
+
+  color: var(--white);
+
+  font-size: 25px;
+
+}
+
+.agenda-month-actions button:disabled {
+
+  opacity: .3;
+
+  cursor: not-allowed;
+
+}
+
+.agenda-weekdays,
+
+.agenda-calendar-days {
+
+  display: grid;
+
+  grid-template-columns: repeat(7,minmax(0,1fr));
+
+  gap: 5px;
+
+  text-align: center;
+
+}
+
+.agenda-weekdays {
+
+  margin-bottom: 12px;
+
+  color: #AAA;
+
+  font-size: 11px;
+
+}
+
+.agenda-calendar-day {
+
+  min-width: 0;
+
+  aspect-ratio: 1;
+
+  border: 1px solid transparent;
+
+  border-radius: 7px;
+
+  background: #303030;
+
+  color: var(--white);
+
+  font-size: 13px;
+
+}
+
+.agenda-calendar-day:disabled {
+
+  opacity: .25;
+
+  cursor: not-allowed;
+
+}
+
+.agenda-calendar-day:not(:disabled):hover {
+
+  border-color: var(--orange);
+
+}
+
+.agenda-calendar-day.is-selected {
+
+  background: var(--orange);
+
+  color: #141414;
+
+  font-weight: 800;
+
+}
+
+.agenda-calendar-blank {
+
+  aspect-ratio: 1;
+
+}
+
+.agenda-calendar-help {
+
+  margin-top: 15px;
+
+  color: #A4A4A4;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+}
+
+/* ==========================================
+
+   HORÃƒÆ’Ã‚ÂRIOS
+
+========================================== */
+
+.agenda-hours-panel > p {
+
+  margin-top: 13px;
+
+  color: #A9A9A9;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+}
+
+.agenda-hours-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3,minmax(0,1fr));
+
+  gap: 10px;
+
+  margin-top: 22px;
+
+}
+
+.agenda-hour {
+
+  padding: 13px 5px;
+
+  border: 1px solid #555;
+
+  border-radius: 8px;
+
+  background: #292929;
+
+  color: #EEE;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+}
+
+.agenda-hour:hover,
+
+.agenda-hour.is-selected {
+
+  border-color: var(--orange);
+
+  background: var(--orange);
+
+  color: #161616;
+
+}
+
+.agenda-hours-panel .agenda-hours-note {
+
+  margin-top: 22px;
+
+  color: #A3A3A3;
+
+  font-size: 12px;
+
+}
+
+/* ==========================================
+
+   DADOS DO CLIENTE
+
+========================================== */
+
+.agenda-form-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2,minmax(0,1fr));
+
+  gap: 19px;
+
+}
+
+.agenda-field {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+}
+
+.agenda-field span {
+
+  color: var(--orange);
+
+}
+
+.agenda-field-full {
+
+  grid-column: 1 / -1;
+
+}
+
+.agenda-field input,
+
+.agenda-field textarea {
+
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 14px 16px;
+
+  border: 1px solid #535353;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #242424;
+
+  color: var(--white);
+
+  font-size: 14px;
+
+}
+
+.agenda-field input:focus,
+
+.agenda-field textarea:focus {
+
+  border-color: var(--orange);
+
+}
+
+.agenda-field textarea {
+
+  resize: vertical;
+
+}
+
+/* ==========================================
+
+   RESUMO
+
+========================================== */
+
+.agenda-summary {
+
+  margin-top: 28px;
+
+  padding: 24px;
+
+  border: 1px solid #444;
+
+  border-radius: 15px;
+
+  background: #242424;
+
+}
+
+.agenda-summary h3 {
+
+  margin-bottom: 19px;
+
+  font-family: var(--font-title);
+
+  font-size: 18px;
+
+}
+
+.agenda-summary dl {
+
+  display: grid;
+
+  gap: 13px;
+
+}
+
+.agenda-summary-row {
+
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  font-size: 14px;
+
+}
+
+.agenda-summary-row dt {
+
+  color: #B6B6B6;
+
+}
+
+.agenda-summary-row dd {
+
+  font-weight: 700;
+
+  text-align: right;
+
+}
+
+.agenda-summary > p {
+
+  margin-top: 19px;
+
+  color: #AAA;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+}
+
+/* ==========================================
+
+   CONSENTIMENTO
+
+========================================== */
+
+.agenda-consent {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  margin-top: 22px;
+
+  color: #D3D3D3;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+}
+
+.agenda-consent input {
+
+  flex-shrink: 0;
+
+  width: 17px;
+
+  height: 17px;
+
+  margin-top: 4px;
+
+  accent-color: var(--orange);
+
+}
+
+/* ==========================================
+
+   PENDENTE DE CONFIRMAÃƒÆ’Ã¢â‚¬Â¡ÃƒÆ’Ã†â€™O
+
+========================================== */
+
+.agenda-pending {
+
+  display: flex;
+
+  gap: 14px;
+
+  margin-top: 23px;
+
+  padding: 18px;
+
+  border: 1px solid rgba(232,124,50,.32);
+
+  border-radius: 12px;
+
+  background: rgba(232,124,50,.07);
+
+}
+
+.agenda-pending > span {
+
+  color: var(--orange);
+
+  font-size: 24px;
+
+}
+
+.agenda-pending strong {
+
+  font-size: 14px;
+
+}
+
+.agenda-pending p {
+
+  margin-top: 5px;
+
+  color: #C9C9C9;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+
+}
+
+/* ==========================================
+
+   TELA DE CONCLUSÃƒÆ’Ã†â€™O
+
+========================================== */
+
+.agenda-success {
+
+  padding: 24px 8px 10px;
+
+  text-align: center;
+
+}
+
+.agenda-success-icon {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 68px;
+
+  height: 68px;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  background: var(--orange);
+
+  color: #171717;
+
+  font-size: 36px;
+
+}
+
+.agenda-success h2 {
+
+  margin-bottom: 13px;
+
+  font-family: var(--font-title);
+
+  font-size: clamp(24px,4vw,35px);
+
+  font-weight: 800;
+
+}
+
+.agenda-success > p {
+
+  max-width: 670px;
+
+  margin: 0 auto 18px;
+
+  color: #CCC;
+
+  line-height: 1.7;
+
+}
+
+.agenda-success-status strong {
+
+  color: var(--orange);
+
+}
+
+.agenda-success-summary {
+
+  max-width: 520px;
+
+  margin: 20px auto;
+
+  padding: 20px;
+
+  border: 1px solid #444;
+
+  border-radius: 12px;
+
+  background: #262626;
+
+  text-align: left;
+
+  line-height: 1.9;
+
+}
+
+.agenda-success-summary dl {
+
+  display: grid;
+
+  gap: 12px;
+
+}
+
+.agenda-success .agenda-success-warning {
+
+  color: #FFB68B;
+
+  font-size: 13px;
+
+}
+
+/* ==========================================
+
+   RODAPÃƒÆ’Ã¢â‚¬Â° DA PÃƒÆ’Ã‚ÂGINA
+
+========================================== */
+
+.booking-bottom {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: 28px;
+
+  color: #AAAAAA;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+}
+
+.booking-bottom a:hover {
+
+  color: var(--orange);
+
+}
+
+/* ==========================================
+
+   TABLETS
+
+========================================== */
+
+@media (max-width: 800px) {
+
+  .agenda-date-layout {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .agenda-service-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .agenda-hours-grid {
+
+    grid-template-columns: repeat(3,minmax(0,1fr));
+
+  }
+
+}
+
+/* ==========================================
+
+   CELULARES
+
+========================================== */
+
+@media (max-width: 600px) {
+
+  .booking-header {
+
+    width: calc(100% - 24px);
+
+    margin-top: 10px;
+
+  }
+
+  .booking-header-content {
+
+    min-height: 56px;
+
+    padding: 8px 12px 8px 18px;
+
+    gap: 10px;
+
+  }
+
+  .booking-logo-name {
+
+    font-size: 19px;
+
+  }
+
+  .booking-logo small {
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+  }
+
+  .booking-back-link {
+
+    padding: 11px 12px;
+
+    gap: 6px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+  }
+
+  .agenda-section {
+
+    padding: 65px 0 60px;
+
+  }
+
+  .agenda-container {
+
+    width: 90%;
+
+  }
+
+  .agenda-intro {
+
+    margin-bottom: 30px;
+
+  }
+
+  .agenda-intro h1 {
+
+    font-size: clamp(28px,8vw,38px);
+
+  }
+
+  .agenda-intro p {
+
+    font-size: 14px;
+
+  }
+
+  .agenda-shell {
+
+    padding: 20px 15px;
+
+    border-radius: 17px;
+
+  }
+
+  .agenda-head {
+
+    flex-wrap: wrap;
+
+  }
+
+  .agenda-head h2 {
+
+    font-size: 23px;
+
+  }
+
+  .agenda-demo-pill {
+
+    font-size: 9px;
+
+  }
+
+  .agenda-progress {
+
+    gap: 6px;
+
+    margin: 25px 0;
+
+  }
+
+  .agenda-progress li {
+
+    font-size: 10px;
+
+  }
+
+  .agenda-progress li span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+  }
+
+  .agenda-step-title {
+
+    font-size: 20px;
+
+  }
+
+  .agenda-service-option {
+
+    gap: 10px;
+
+    padding: 15px 12px;
+
+  }
+
+  .agenda-service-text strong {
+
+    font-size: 13px;
+
+  }
+
+  .agenda-service-price {
+
+    font-size: 12px;
+
+  }
+
+  .agenda-calendar-panel,
+
+  .agenda-hours-panel {
+
+    padding: 17px 12px;
+
+  }
+
+  .agenda-calendar-top h3,
+
+  .agenda-hours-panel h3 {
+
+    font-size: 16px;
+
+  }
+
+  .agenda-calendar-day {
+
+    font-size: 12px;
+
+  }
+
+  .agenda-hours-grid {
+
+    gap: 7px;
+
+  }
+
+  .agenda-hour {
+
+    font-size: 12px;
+
+  }
+
+  .agenda-form-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .agenda-actions {
+
+    gap: 10px;
+
+  }
+
+  .agenda-btn {
+
+    padding: 13px 14px;
+
+    font-size: 12px;
+
+  }
+
+  .agenda-summary {
+
+    padding: 17px 14px;
+
+  }
+
+  .agenda-summary-row {
+
+    font-size: 12px;
+
+  }
+
+  .booking-bottom {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+  }
+
+}
+
+/* ==========================================
+
+   TELAS PEQUENAS
+
+========================================== */
+
+@media (max-width: 360px) {
+
+  .booking-logo-name {
+
+    font-size: 17px;
+
+  }
+
+  .booking-back-link {
+
+    font-size: 10px;
+
+    padding: 10px;
+
+  }
+
+  .agenda-service-text strong {
+
+    font-size: 12px;
+
+  }
+
+  .agenda-service-price {
+
+    font-size: 11px;
+
+  }
+
+  .agenda-intro h1 {
+
+    font-size: 30px;
+
+  }
+
+}
+
+/* ==========================================
+
+   ACESSIBILIDADE
+
+========================================== */
+
+/*
+
+  O tÃƒÆ’Ã‚Â­tulo recebe foco via JavaScript
+
+  para anunciar a mudanÃƒÆ’Ã‚Â§a de etapa.
+
+  Como nÃƒÆ’Ã‚Â£o ÃƒÆ’Ã‚Â© um controle interativo,
+
+  removemos apenas seu contorno visual.
+
+*/
+
+.agenda-step-title:focus,
+
+.agenda-step-title:focus-visible,
+
+.agenda-success h2:focus,
+
+.agenda-success h2:focus-visible {
+
+  outline: none;
+
+  box-shadow: none;
+
+}
+
+a:focus-visible,
+
+button:focus-visible,
+
+input:focus-visible,
+
+textarea:focus-visible {
+
+  outline: 2px solid var(--orange);
+
+  outline-offset: 4px;
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+
+    scroll-behavior: auto;
+
+  }
+
+  .booking-back-link,
+
+  .agenda-service-option,
+
+  .agenda-btn {
+
+    transition: none;
+
+  }
+
+}
+
+/* REFINAMENTOS DA PÃƒÆ’Ã‚ÂGINA PÃƒÆ’Ã…Â¡BLICA */
+
+/* Lume Agenda ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ refinamentos da pÃƒÆ’Ã‚Â¡gina pÃƒÆ’Ã‚Âºblica (nÃƒÆ’Ã‚Â£o altera o CSS original) */
+
+.agenda-service-option { transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease; }
+
+.agenda-service-option.is-selected,
+
+.agenda-service-option[aria-checked="true"] { border-color: #f5822a !important; background: rgba(245,130,42,.105) !important; box-shadow: inset 0 0 0 1px rgba(245,130,42,.22); }
+
+.agenda-service-option.is-selected .agenda-service-radio { border-color:#f5822a!important; background:#f5822a!important; box-shadow:inset 0 0 0 4px #242424; }
+
+.agenda-calendar-day.is-unavailable-closed:not(.is-selected) { opacity:.48; border:1px dashed rgba(210,120,110,.48)!important; }
+
+.agenda-calendar-day.is-unavailable-full:not(.is-selected) { opacity:.65; background:repeating-linear-gradient(135deg,rgba(245,130,42,.07) 0 5px,transparent 5px 10px)!important; border:1px solid rgba(245,130,42,.45)!important; }
+
+.agenda-calendar-day.is-unavailable-past { opacity:.32; }
+
+.agenda-hour.is-selected, .agenda-hour[aria-pressed="true"] { color:#171717!important; background:#f5822a!important; border-color:#f5822a!important; font-weight:750; }
+
+.agenda-choice-summary { margin-top:16px; padding:14px 16px; border-radius:12px; border:1px solid rgba(245,130,42,.42); background:rgba(245,130,42,.08); color:#f0eae6; }
+
+.agenda-choice-summary[hidden] { display:none!important; }
+
+.agenda-choice-summary strong { display:block; margin-bottom:5px; color:#f5822a; font-size:.88rem; }
+
+.agenda-choice-summary p { margin:0; line-height:1.55; font-size:.88rem; overflow-wrap:anywhere; }
+
+.agenda-summary-row\\.is-highlighted dd { color:#f5822a; font-weight:750; }
+
+#agenda-progress .is-done { position:relative; }
+
+#agenda-phone:focus-visible { border-color:#f5822a; outline:2px solid rgba(245,130,42,.25); outline-offset:1px; }
+
+@media (max-width:700px) { .agenda-service-option { min-width:0; } .agenda-choice-summary { padding:12px; } }
+
+/* Estados legÃƒÆ’Ã‚Â­veis e foco acessÃƒÆ’Ã‚Â­vel no calendÃƒÆ’Ã‚Â¡rio */
+
+.agenda-calendar-day:focus-visible,
+
+.agenda-hour:focus-visible,
+
+.agenda-service-option:focus-visible,
+
+.agenda-btn:focus-visible {
+
+  outline: 2px solid var(--orange);
+
+  outline-offset: 3px;
+
+}
+
+.agenda-calendar-legend { display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:16px; color:#bcbcbc; font-size:11px; line-height:1.5; }
+
+.agenda-calendar-legend span { display:inline-flex; align-items:center; gap:7px; }
+
+.agenda-calendar-legend i { display:inline-block; height:12px; width:12px; border-radius:3px; flex-shrink:0; }
+
+.agenda-calendar-legend .is-available { background:var(--orange); }
+
+.agenda-calendar-legend .is-closed { border:1px dashed #c77973; background:#302322; }
+
+.agenda-calendar-legend .is-full { border:1px solid var(--orange); background: repeating-linear-gradient(135deg,rgba(245,130,42,.28) 0 3px,transparent 3px 6px); }
+
+.agenda-calendar-legend .is-past { background:#444; opacity:.6; }
+
+.agenda-success-summary .agenda-summary-row { padding:2px 0; }
+
+@media(max-width:680px) { .agenda-calendar-legend { gap:8px 12px; } .agenda-choice-summary { margin-top:16px; } }
+
+/* AJUSTES MOBILE DA PÃƒÆ’Ã‚ÂGINA PÃƒÆ’Ã…Â¡BLICA ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â INSERIDOS NO CSS ORIGINAL */
+
+/* A confirmaÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o das etapas ÃƒÆ’Ã‚Â© desenhada, sem caracteres sujeitos a erro de codificaÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o. */
+
+#agenda-progress .is-done::after {
+
+  content: "";
+
+  display: inline-block;
+
+  width: 9px;
+
+  height: 5px;
+
+  margin-left: 8px;
+
+  margin-bottom: 2px;
+
+  border-left: 2px solid var(--orange);
+
+  border-bottom: 2px solid var(--orange);
+
+  transform: rotate(-45deg);
+
+}
+
+@media (max-width: 600px) {
+
+  .agenda-section { padding-top: 28px; padding-bottom: 38px; }
+
+  .agenda-intro { margin-bottom: 21px; }
+
+  .agenda-intro h1 {
+
+    font-size: clamp(27px, 7.2vw, 34px);
+
+    line-height: 1.13;
+
+    margin-top: 12px;
+
+    margin-bottom: 13px;
+
+  }
+
+  .agenda-intro p { line-height: 1.55; }
+
+  .agenda-shell { scroll-margin-top: 14px; }
+
+  .agenda-head h2 { font-size: 21px; }
+
+  .agenda-demo-note { margin-top: 12px; padding: 10px 12px; font-size: 12px; line-height: 1.5; }
+
+  .agenda-progress { margin: 20px 0 23px; }
+
+  .agenda-step-subtitle { margin: 9px 0 20px; }
+
+  .agenda-service-option { padding: 13px 12px; }
+
+  /* O asterisco permanece na mesma linha do nome do campo. */
+
+  .agenda-field { display: block; line-height: 1.5; }
+
+  .agenda-field > span { display: inline; }
+
+  .agenda-field input, .agenda-field textarea { display: block; margin-top: 9px; }
+
+  .agenda-form-grid { gap: 15px; }
+
+  .agenda-calendar-day.is-unavailable-full:not(.is-selected) {
+
+    opacity: .48;
+
+    background: repeating-linear-gradient(135deg, rgba(232,124,50,.055) 0 5px, transparent 5px 10px) !important;
+
+  }
+
+  .agenda-calendar-day.is-unavailable-closed:not(.is-selected) { opacity: .36; }
+
+  .agenda-hours-panel:has(.agenda-hours-grid:empty) { min-height: 0; }
+
+  .agenda-hours-panel:has(.agenda-hours-grid:empty) .agenda-hours-note { margin-top: 12px; }
+
+  .agenda-summary { margin-top: 20px; padding: 15px 13px; }
+
+  .agenda-summary dl { gap: 10px; }
+
+  .agenda-success { padding-top: 0; }
+
+  .agenda-success-summary { padding: 15px 13px; }
+
+  .agenda-success-summary dl { gap: 10px; }
+
+  .agenda-shell.is-complete .agenda-demo-note { display: none; }
+
+  .agenda-shell.is-complete .agenda-success-status strong {
+
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    border-radius: 7px;
+
+    background: rgba(232,124,50,.11);
+
+  }
+
+  .agenda-shell.is-complete .agenda-success-warning { line-height: 1.5; }
+
+}
+
+/* CORREÃƒÆ’Ã¢â‚¬Â¡ÃƒÆ’Ã†â€™O DA LARGURA MOBILE ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SEM ROLAGEM LATERAL */
+
+@media (max-width: 600px) {
+
+  html, body.agenda-page {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+  }
+
+  body.agenda-page > main,
+
+  .agenda-section,
+
+  .agenda-container,
+
+  .agenda-intro,
+
+  .agenda-shell,
+
+  .agenda-head,
+
+  #agenda-form,
+
+  .agenda-step,
+
+  .agenda-date-layout,
+
+  .agenda-calendar-panel,
+
+  .agenda-hours-panel,
+
+  .agenda-service-grid,
+
+  .agenda-service-option,
+
+  .agenda-service-text,
+
+  .agenda-form-grid,
+
+  .agenda-field,
+
+  .agenda-summary,
+
+  .agenda-success,
+
+  .booking-bottom {
+
+    min-width: 0;
+
+    max-width: 100%;
+
+  }
+
+  .agenda-container {
+
+    width: calc(100% - 32px);
+
+    margin-inline: auto;
+
+  }
+
+  .agenda-service-grid,
+
+  .agenda-date-layout,
+
+  .agenda-form-grid {
+
+    grid-template-columns: minmax(0, 1fr);
+
+  }
+
+  .agenda-shell { width: 100%; }
+
+  .booking-header {
+
+    width: calc(100% - 24px);
+
+    max-width: 100%;
+
+    margin-inline: auto;
+
+  }
+
+  .agenda-head h2,
+
+  .agenda-step-title,
+
+  .agenda-summary-row,
+
+  .agenda-choice-summary,
+
+  .booking-bottom {
+
+    overflow-wrap: anywhere;
+
+  }
+
+  .agenda-service-option { width: 100%; }
+
+  .agenda-service-price { flex-shrink: 0; }
+
+  .agenda-hours-grid, .agenda-calendar-days, .agenda-weekdays {
+
+    min-width: 0;
+
+    width: 100%;
+
+  }
+
+  .agenda-calendar-day, .agenda-hour { min-width: 0; }
+
+}
+
+/* LUME AGENDA Ã¢â‚¬â€ COMPACTAÃƒâ€¡ÃƒÆ’O MOBILE E DISPONIBILIDADE */
+
+@media(max-width:600px){
+
+ .agenda-section{padding-top:24px!important;padding-bottom:36px!important}
+
+ .agenda-intro{margin-bottom:17px!important}
+
+ .agenda-intro h1{font-size:clamp(27px,8vw,36px)!important;margin:9px 0!important}
+
+ .agenda-intro p{font-size:13px!important;line-height:1.5!important}
+
+ .agenda-shell{padding:17px 14px!important}
+
+ .agenda-progress{margin:18px 0 20px!important}
+
+ .agenda-demo-note{padding:10px 12px!important;font-size:12px!important;line-height:1.45!important}
+
+ .agenda-step-subtitle{margin:8px 0 16px!important}
+
+ .agenda-service-option{padding:12px!important}
+
+ .agenda-calendar-panel,.agenda-hours-panel{padding:15px!important}
+
+ .agenda-date-layout{gap:12px!important}
+
+ .agenda-calendar-help,.agenda-hours-note{font-size:11px!important;line-height:1.5!important}
+
+ .agenda-actions{margin-top:20px!important}
+
+}
+
+
+/* ======================================================
+   LUME | REFINAMENTO DA ALTURA DO AGENDAMENTO NO CELULAR
+   Somente mobile. Sem alterar HTML, JS ou layout desktop.
+   ====================================================== */
+@media (max-width: 600px) {
+  .agenda-section {
+    padding-top: 22px !important;
+    padding-bottom: 28px !important;
+  }
+  .agenda-intro { margin-bottom: 15px !important; }
+  .agenda-intro h1 {
+    font-size: clamp(26px, 7.2vw, 33px) !important;
+    line-height: 1.13;
+    margin: 8px 0 10px !important;
+  }
+  .agenda-intro p { font-size: 13px !important; line-height: 1.48 !important; }
+  .agenda-shell { padding: 16px 14px !important; }
+  .agenda-head { gap: 9px; }
+  .agenda-head h2 { font-size: 19px; line-height: 1.25; margin-top: 5px; }
+  .agenda-eyebrow { font-size: 10px; }
+  .agenda-demo-pill { padding: 7px 10px; font-size: 9px; }
+  .agenda-demo-note {
+    margin-top: 10px;
+    padding: 9px 11px !important;
+    font-size: 11.5px !important;
+    line-height: 1.45 !important;
+  }
+  .agenda-progress { margin: 16px 0 18px !important; }
+  .agenda-progress li { padding-top: 9px; border-top-width: 3px; }
+  .agenda-step-title { font-size: 19px; }
+  .agenda-step-subtitle {
+    margin: 7px 0 14px !important;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  .agenda-service-grid { gap: 9px; }
+  .agenda-service-option {
+    padding: 11px 12px !important;
+    gap: 10px;
+    min-height: 0;
+  }
+  .agenda-service-text { gap: 3px; }
+  .agenda-service-text strong { font-size: 13px; line-height: 1.35; }
+  .agenda-service-text small { font-size: 11px; }
+  .agenda-service-price { font-size: 12px; }
+  .agenda-actions { margin-top: 16px !important; }
+  .agenda-date-layout { gap: 12px !important; }
+  .agenda-calendar-panel, .agenda-hours-panel { padding: 14px 12px !important; }
+  .agenda-summary { margin-top: 17px; }
+  .booking-bottom { margin-top: 19px; }
+}
+
+
+/* LUME | Segunda compactaÃ§Ã£o da etapa de serviÃ§os â€” apenas celular.
+   MantÃ©m lista vertical, Ã¡reas de toque e todo o comportamento original. */
+@media (max-width: 600px) {
+  /* IntroduÃ§Ã£o mais curta e legÃ­vel */
+  .agenda-section { padding-top: 16px !important; padding-bottom: 24px !important; }
+  .agenda-intro { margin-bottom: 12px !important; }
+  .agenda-intro h1 {
+    font-size: clamp(25px, 6.8vw, 31px) !important;
+    line-height: 1.11 !important;
+    margin: 6px 0 8px !important;
+  }
+  .agenda-intro p { font-size: 12.5px !important; line-height: 1.43 !important; }
+
+  /* IntroduÃ§Ã£o do formulÃ¡rio e aviso de demonstraÃ§Ã£o */
+  .agenda-shell { padding: 14px 13px !important; }
+  .agenda-head { gap: 7px !important; }
+  .agenda-head h2 { margin-top: 4px !important; font-size: 18px !important; }
+  .agenda-demo-pill { padding: 6px 9px !important; }
+  .agenda-demo-note {
+    margin-top: 8px !important;
+    padding: 8px 10px !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+  }
+  .agenda-progress { gap: 7px !important; margin: 13px 0 14px !important; }
+  .agenda-progress li { padding-top: 7px !important; font-size: 11.5px !important; }
+  .agenda-progress li span { font-size: 11.5px !important; }
+  .agenda-step-title { font-size: 18px !important; }
+  .agenda-step-subtitle { margin: 5px 0 12px !important; line-height: 1.4 !important; }
+
+  /* ServiÃ§os: cards mais baixos, mas preservando toque acessÃ­vel */
+  .agenda-service-grid { gap: 7px !important; }
+  .agenda-service-option {
+    min-height: 58px !important;
+    padding: 9px 11px !important;
+    gap: 9px !important;
+  }
+  .agenda-service-text { gap: 2px !important; }
+  .agenda-service-text strong { font-size: 13px !important; line-height: 1.3 !important; }
+  .agenda-service-text small { font-size: 11px !important; line-height: 1.25 !important; }
+  .agenda-service-price { font-size: 12px !important; }
+  .agenda-actions { margin-top: 13px !important; }
+}
+
+/* LUME | Refinamentos finais mobile das etapas 02 e 03.
+   Preserva a etapa 01, o layout desktop e toda a lÃ³gica do agendamento. */
+@media (max-width: 600px) {
+  /* Etapa 02 â€” calendÃ¡rio, legenda e horÃ¡rios */
+  .agenda-date-layout { gap: 10px !important; }
+  .agenda-calendar-panel, .agenda-hours-panel { padding: 12px 11px !important; }
+  .agenda-calendar-top { margin-bottom: 15px; }
+  .agenda-weekdays { margin-bottom: 8px; }
+  .agenda-calendar-legend {
+    gap: 6px 10px !important;
+    margin-top: 11px !important;
+    font-size: 10px !important;
+    line-height: 1.4 !important;
+  }
+  .agenda-calendar-legend span { gap: 5px; }
+  .agenda-calendar-legend i { width: 10px; height: 10px; }
+  .agenda-calendar-help { margin-top: 10px; }
+  .agenda-hours-panel > p { margin-top: 9px; }
+  .agenda-hours-grid { margin-top: 14px; gap: 8px; }
+  .agenda-hours-panel .agenda-hours-note { margin-top: 15px; }
+
+  /* Etapa 03 â€” formulÃ¡rio com campos ainda confortÃ¡veis ao toque */
+  .agenda-form-grid { gap: 12px !important; }
+  .agenda-field { gap: 5px; }
+  .agenda-field input, .agenda-field textarea {
+    margin-top: 6px;
+    padding: 12px 13px;
+    font-size: 14px;
+  }
+  .agenda-field input { min-height: 44px; }
+  .agenda-field textarea { height: 84px; min-height: 78px; }
+
+  /* Resumo: preserva todos os dados, reduz apenas espaÃ§os internos */
+  .agenda-summary { margin-top: 15px !important; padding: 13px 12px !important; }
+  .agenda-summary h3 { margin-bottom: 12px; }
+  .agenda-summary dl { gap: 7px !important; }
+  .agenda-summary-row { gap: 9px; }
+  .agenda-summary > p { margin-top: 12px; line-height: 1.5; }
+
+  /* Aceite e aviso de pendÃªncia */
+  .agenda-consent { gap: 9px; margin-top: 16px; line-height: 1.55; }
+  .agenda-consent input { margin-top: 2px; }
+  .agenda-pending { gap: 10px; margin-top: 16px; padding: 13px 12px; }
+  .agenda-pending > span { font-size: 21px; }
+  .agenda-pending p { line-height: 1.5; }
+}

@@ -1,0 +1,947 @@
+
+/* ==========================================
+   VÃƒâ€°RTICE AUTO DETAIL
+   DESENVOLVIDO PELA LUME
+   RESPONSIVE.CSS Ã¢â‚¬â€ SITE PRINCIPAL
+========================================== */
+
+/* ==========================================
+   DESKTOPS INTERMEDIÃƒÂRIOS
+========================================== */
+
+@media (max-width: 1200px) {
+
+  .footer-grid {
+    grid-template-columns:
+      minmax(0,1fr)
+      minmax(0,.7fr)
+      minmax(0,1fr);
+    column-gap: 32px;
+    row-gap: 40px;
+  }
+
+  .footer-location {
+    grid-column: 1 / -1;
+  }
+
+  .footer-map {
+    height: 290px;
+  }
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+
+  /* CABEÃƒâ€¡ALHO */
+
+  .header {
+    top: 12px;
+    width: calc(100% - 32px);
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 62px;
+    padding: 8px 18px 8px 23px;
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .btn-header {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 102;
+    margin-left: auto;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    padding: 27px 25px;
+    background: rgba(24,24,24,.98);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 22px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.35);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 23px;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 15px;
+  }
+
+  .nav-mobile-cta {
+    display: inline-flex !important;
+    width: 100%;
+    margin-top: 5px;
+    padding: 15px 22px;
+    background: var(--orange);
+    color: var(--black);
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .nav-mobile-cta:hover {
+    background: #FF984F;
+  }
+
+  /* HERO */
+
+  .hero-content {
+    padding-top: 135px;
+  }
+
+  /* SERVIÃƒâ€¡OS */
+
+  .services-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 24px;
+  }
+
+  .service-image {
+    height: 230px;
+  }
+
+  /* SOBRE NÃƒâ€œS */
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 35px;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 460px;
+    min-height: 0;
+  }
+
+  .about-image img {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+  /* GALERIA */
+
+  .gallery-viewport {
+    --gallery-visible: 2;
+    --gallery-gap: 20px;
+  }
+
+  .gallery-image-button {
+    height: 280px;
+  }
+
+}
+
+/* ==========================================
+   TABLETS MENORES
+========================================== */
+
+@media (max-width: 850px) {
+
+  .footer {
+    padding-top: 65px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    column-gap: 35px;
+    row-gap: 45px;
+  }
+
+  .footer-location {
+    grid-column: auto;
+  }
+
+  .footer-map {
+    height: 245px;
+  }
+
+  .footer-heading {
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    margin-top: 50px;
+  }
+
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+  .container {
+    width: 90%;
+  }
+
+  /* CABEÃƒâ€¡ALHO */
+
+  .header {
+    top: 10px;
+    width: calc(100% - 24px);
+  }
+
+  .header-content {
+    min-height: 56px;
+    padding: 8px 13px 8px 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .logo small {
+    font-size: 7px;
+    letter-spacing: 3px;
+  }
+
+  .nav {
+    padding: 24px 20px;
+    gap: 21px;
+  }
+
+  /* HERO */
+
+  .hero {
+    min-height: 720px;
+    min-height: max(720px,100svh);
+    background-position: 60% center;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0,0,0,.94),
+      rgba(0,0,0,.68)
+    );
+  }
+
+  .hero-content {
+    padding-top: 135px;
+    padding-bottom: 70px;
+  }
+
+  .hero-text {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-tag {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px,9vw,48px);
+    line-height: 1.15;
+    letter-spacing: -1px;
+    overflow-wrap: break-word;
+  }
+
+  .hero-text > p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .hero-info {
+    margin-top: 35px;
+  }
+
+  .hero-info p {
+    font-size: 11px;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+  /* SERVIÃƒâ€¡OS */
+
+  .services {
+    padding: 75px 0;
+  }
+
+  .section-header {
+    margin-bottom: 35px;
+  }
+
+  .section-header h2 {
+    font-size: clamp(28px,8vw,38px);
+    line-height: 1.25;
+  }
+
+  .section-header p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .service-image {
+    height: 220px;
+  }
+
+  .service-content {
+    padding: 22px 20px 24px;
+  }
+
+  .service-content h3 {
+    font-size: 20px;
+  }
+
+  .service-description {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+  }
+
+  .service-details {
+    padding-top: 18px;
+    margin-bottom: 20px;
+    gap: 12px;
+  }
+
+  .service-price strong {
+    font-size: 22px;
+  }
+
+  .price-label {
+    font-size: 12px;
+  }
+
+  .service-duration {
+    font-size: 12px;
+  }
+
+  .service-link {
+    font-size: 14px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  /* SOBRE NÃƒâ€œS */
+
+  .about {
+    padding: 75px 0;
+  }
+
+  .about-grid {
+    gap: 28px;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 320px;
+    min-height: 0;
+    border-radius: 18px;
+  }
+
+  .about-image img {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .about-content h2 {
+    font-size: clamp(28px,8vw,38px);
+    line-height: 1.25;
+    margin: 16px 0 18px;
+  }
+
+  .about-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .highlight-card {
+    padding: 16px 16px 18px;
+  }
+
+  .highlight-card strong {
+    font-size: 15px;
+  }
+
+  .highlight-card span {
+    font-size: 13px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .about-stat {
+    padding: 16px 15px;
+  }
+
+  .about-stat strong {
+    font-size: 22px;
+  }
+
+  .about-stat span {
+    font-size: 13px;
+  }
+
+  .about-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .about-actions .btn {
+    width: 100%;
+  }
+
+  /* GALERIA */
+
+  .gallery {
+    padding: 75px 0;
+  }
+
+  .gallery-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 30px;
+  }
+
+  .gallery-heading h2 {
+    font-size: clamp(28px,8vw,38px);
+    line-height: 1.25;
+  }
+
+  .gallery-heading p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .gallery-controls {
+    align-self: flex-end;
+  }
+
+  .gallery-arrow {
+    width: 43px;
+    height: 43px;
+    font-size: 20px;
+  }
+
+  .gallery-viewport {
+    --gallery-visible: 1;
+    --gallery-gap: 16px;
+  }
+
+  .gallery-slide {
+    border-radius: 14px;
+  }
+
+  .gallery-image-button {
+    height: 250px;
+  }
+
+  .gallery-slide figcaption {
+    padding: 19px 19px 22px;
+  }
+
+  .gallery-slide figcaption strong {
+    font-size: 17px;
+  }
+
+  .gallery-bottom {
+    margin-top: 24px;
+    gap: 15px;
+  }
+
+  .gallery-play-toggle {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  .gallery-dots {
+    gap: 7px;
+  }
+
+  .gallery-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .gallery-dot.active,
+  .gallery-dot[aria-current="true"] {
+    width: 22px;
+  }
+
+  .gallery-note {
+    font-size: 11px;
+  }
+
+  .gallery-lightbox {
+    gap: 8px;
+    padding: 70px 12px 30px;
+  }
+
+  .lightbox-content {
+    max-width: calc(100vw - 110px);
+  }
+
+  .lightbox-content img {
+    max-height: 70dvh;
+  }
+
+  .lightbox-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .lightbox-close {
+    top: 15px;
+    right: 15px;
+  }
+
+  .lightbox-content p {
+    font-size: 12px;
+  }
+
+  /* CONTATO */
+
+  .preview-section {
+    padding: 75px 0 55px;
+    min-height: 250px;
+  }
+
+  .preview-section h2 {
+    font-size: clamp(28px,8vw,36px);
+  }
+
+  /* ========================================
+     RODAPÃƒâ€° Ã¢â‚¬â€ CELULAR
+  ======================================== */
+
+  .footer {
+    padding: 55px 0 22px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    row-gap: 38px;
+  }
+
+  .footer-logo-name {
+    font-size: 25px;
+  }
+
+  .footer-description {
+    max-width: 100%;
+    margin-top: 21px;
+    font-size: 14px;
+  }
+
+  .footer-booking-link {
+    margin-top: 22px;
+    padding: 14px 19px;
+  }
+
+  .footer-heading {
+    margin-bottom: 19px;
+    font-size: 17px;
+  }
+
+  .footer-nav-list {
+    gap: 14px;
+  }
+
+  .footer-contact-list {
+    gap: 23px;
+  }
+
+  .footer-contact-item {
+    gap: 12px;
+  }
+
+  .footer-contact-text strong {
+    font-size: 13px;
+  }
+
+  .footer-contact-text > span,
+  .footer-contact-text address {
+    font-size: 13px;
+  }
+
+  .footer-location-description {
+    font-size: 13px;
+  }
+
+  .footer-map {
+    width: 100%;
+    height: 260px;
+    border-radius: 13px;
+  }
+
+  .footer-map iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .footer-map-link {
+    margin-top: 16px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-top: 43px;
+    padding: 25px 0;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+  }
+
+  .footer-admin-link {
+    font-size: 12px;
+  }
+
+  .footer-credits {
+    padding-top: 17px;
+    text-align: left;
+  }
+
+  .footer-credits span {
+    font-size: 11px;
+  }
+
+}
+
+/* ==========================================
+   CELULARES PEQUENOS
+========================================== */
+
+@media (max-width: 360px) {
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .logo small {
+    font-size: 7px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-buttons .btn {
+    font-size: 12px;
+  }
+
+  .service-content h3 {
+    font-size: 19px;
+  }
+
+  .service-image {
+    height: 200px;
+  }
+
+  .service-price strong {
+    font-size: 20px;
+  }
+
+  .service-duration {
+    font-size: 11px;
+  }
+
+  .about-image {
+    height: 280px;
+    min-height: 0;
+  }
+
+  .about-content h2 {
+    font-size: 30px;
+  }
+
+  .gallery-image-button {
+    height: 220px;
+  }
+
+  .gallery-heading h2 {
+    font-size: 30px;
+  }
+
+  /* RODAPÃƒâ€° */
+
+  .footer-logo-name {
+    font-size: 23px;
+  }
+
+  .footer-booking-link {
+    width: 100%;
+  }
+
+  .footer-map {
+    height: 225px;
+  }
+
+  .footer-contact-text {
+    min-width: 0;
+  }
+
+}
+
+
+/* ==========================================
+   LUME Ã¢â‚¬â€ CABEÃƒâ€¡ALHO E WHATSAPP RESPONSIVOS
+========================================== */
+@media (min-width: 1101px) and (max-width: 1270px) {
+  .header-content { column-gap: 12px; padding-left: 18px; }
+  .nav { gap: 17px; }
+  .nav-link { font-size: 13px; }
+  .header-actions { gap: 7px; }
+  .header .lume-demo-access { padding: 11px 10px; font-size: 12px; }
+  .header-actions .btn-header { padding: 12px 15px; font-size: 12px; }
+}
+@media (max-width: 1100px) {
+  .header-actions { display: none; }
+  .header .nav .lume-demo-mobile {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 16px;
+    border: 1px solid var(--orange);
+    border-radius: 10px;
+    color: #F4A56E;
+    font-weight: 700;
+  }
+  .header .nav .lume-demo-mobile svg { width: 18px; height: 18px; flex-shrink: 0; }
+}
+@media (max-width: 600px) {
+  .lume-whatsapp-float {
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    width: 54px;
+    height: 54px;
+  }
+}
+
+/* ==========================================
+   LUME â€” AJUSTES EXCLUSIVOS MOBILE (30/10)
+   ServiÃ§os em carrossel e rodapÃ© compacto
+========================================== */
+/* No desktop o elemento details nÃ£o interfere na exibiÃ§Ã£o do mapa. */
+.footer-map-disclosure { display: contents; }
+.footer-map-toggle { display: none; }
+
+@media (max-width: 600px) {
+  /* ServiÃ§os: deslizamento horizontal sem alterar cards ou links. */
+  .services-grid {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 5%;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 3px 5% 18px;
+    margin-inline: -5.5556%;
+    scrollbar-width: none;
+    align-items: stretch;
+  }
+  .services-grid::-webkit-scrollbar { display: none; }
+  .services-grid .service-card {
+    flex: 0 0 86%;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  /* A prÃ³xima imagem parcialmente visÃ­vel indica que hÃ¡ mais cards. */
+  .services-grid .service-card:hover { transform: none; }
+
+  /* RodapÃ©: reduzir o percurso de rolagem no celular. */
+  .footer { padding-top: 42px; }
+  .footer-grid { row-gap: 25px; }
+  .footer-description { margin-top: 14px; }
+  .footer-heading { margin-bottom: 13px; }
+  .footer-contact-list { gap: 14px; }
+  .footer-contact-item { gap: 10px; }
+  .footer-location-description { margin-bottom: 11px; }
+  .footer-bottom { margin-top: 28px; }
+
+  /* O mapa fica recolhido apenas no mobile, sem JavaScript. */
+  .footer-map-disclosure { display: block; }
+  .footer-map-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    min-height: 46px;
+    padding: 12px 16px;
+    color: var(--orange);
+    background: rgba(232,124,50,.07);
+    border: 1px solid var(--orange);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .footer-map-toggle::-webkit-details-marker { display: none; }
+  .footer-map-toggle:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+  .footer-map-close-label { display: none; }
+  .footer-map-disclosure[open] .footer-map-open-label { display: none; }
+  .footer-map-disclosure[open] .footer-map-close-label { display: inline; }
+  .footer-map-chevron { font-size: 20px; line-height: 1; }
+  .footer-map-disclosure[open] .footer-map-chevron { transform: rotate(180deg); }
+  .footer-map-disclosure .footer-map { margin-top: 12px; height: 225px; }
+}
+@media (max-width: 360px) {
+  .services-grid .service-card { flex-basis: 90%; }
+}
+
+
+/* ==========================================
+   REFINAMENTO MOBILE â€” HERO, CARROSSEL,
+   SOBRE NÃ“S E CONTATO
+   NÃ£o modifica a apresentaÃ§Ã£o desktop.
+========================================== */
+.services-carousel-controls { display: none; }
+@media (max-width: 600px) {
+  /* HERO: imagem mais visÃ­vel, evitando grande faixa vazia. */
+  .hero {
+    min-height: 510px;
+    min-height: max(510px, 75svh);
+    background-position: 58% center;
+  }
+  .hero-overlay {
+    background: linear-gradient(90deg,rgba(0,0,0,.84) 0%,rgba(0,0,0,.61) 54%,rgba(0,0,0,.33) 100%);
+  }
+  .hero-content { padding-top: 110px; padding-bottom: 42px; }
+  .hero h1 { margin: 13px 0 14px; }
+  .hero-text > p { line-height: 1.58; }
+  .hero-buttons { margin-top: 22px; gap: 10px; }
+  .hero-info { margin-top: 20px; }
+
+  /* SERVIÃ‡OS: botÃµes laterais e indicaÃ§Ã£o visual do gesto. */
+  .services { padding-top: 54px; padding-bottom: 53px; }
+  .services .section-header { margin-bottom: 17px; }
+  .services-carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 10px;
+  }
+  .services-carousel-hint { color: #b5b5b5; font-size: 11px; line-height: 1.4; }
+  .services-carousel-arrows { display: flex; gap: 8px; flex-shrink: 0; }
+  .services-carousel-arrow {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; padding: 0;
+    border: 1px solid rgba(232,124,50,.7);
+    border-radius: 50%; background: #282828;
+    color: #f5f3ef; font-size: 21px; line-height: 1;
+  }
+  .services-carousel-arrow:not(:disabled):active { background: var(--orange); color: var(--black); }
+  .services-carousel-arrow:disabled { opacity: .33; cursor: default; }
+  .services-carousel-arrow:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+  .services-grid .service-card { flex-basis: 84%; }
+
+  /* SOBRE: destaques e indicadores lado a lado. */
+  .about { padding: 53px 0 57px; }
+  .about-grid { gap: 21px; }
+  .about-image { height: 235px; }
+  .about-content h2 { margin: 11px 0 13px; }
+  .about-content p { line-height: 1.62; }
+  .about-highlights { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px; margin-top: 19px; }
+  .highlight-card { min-width: 0; padding: 12px 10px 13px; border-radius: 11px; }
+  .highlight-card strong { font-size: 12px; line-height: 1.4; margin-bottom: 5px; overflow-wrap: anywhere; }
+  .highlight-card span { font-size: 11px; line-height: 1.4; overflow-wrap: anywhere; }
+  .about-stats { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; margin-top: 12px; }
+  .about-stat { min-width: 0; padding: 11px 7px; border-radius: 11px; }
+  .about-stat strong { font-size: clamp(15px,4.2vw,20px); margin-bottom: 3px; overflow-wrap: anywhere; }
+  .about-stat span { font-size: 10px; line-height: 1.3; overflow-wrap: anywhere; }
+  .about-actions { margin-top: 18px; gap: 9px; }
+  .about-actions .btn { padding: 12px 14px; }
+
+  /* RODAPÃ‰: melhor uso da largura, mantendo dados e mapa. */
+  .footer { padding-top: 34px; }
+  .footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 15px; row-gap: 23px; }
+  .footer-grid > .footer-brand, .footer-grid > .footer-contact { grid-column: 1 / -1; }
+  .footer-grid > .footer-navigation, .footer-grid > .footer-location { grid-column: 1 / -1; }
+  .footer-brand .footer-description { line-height: 1.55; }
+  .footer-booking-link { margin-top: 13px; }
+  .footer-demo-label { margin-top: 10px; }
+  .footer-nav-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 12px; }
+  .footer-nav-list a { font-size: 12px; }
+  .footer-contact-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px 11px; }
+  .footer-contact-item { min-width: 0; align-items: flex-start; gap: 7px; }
+  .footer-contact-icon { flex: 0 0 27px; width: 27px; height: 27px; }
+  .footer-contact-icon svg { width: 15px; height: 15px; }
+  .footer-contact-text { min-width: 0; overflow-wrap: anywhere; }
+  .footer-contact-text > span, .footer-contact-text address { font-size: 11px; line-height: 1.5; }
+  .footer-contact-text small { font-size: 10px; line-height: 1.4; }
+  .footer-contact-text strong { font-size: 12px; }
+  .footer-location-description { font-size: 11px; line-height: 1.5; }
+  .footer-map-toggle { padding: 10px 8px; font-size: 11px; gap: 5px; min-height: 42px; }
+  .footer-map-link { font-size: 11px; line-height: 1.4; }
+  .footer-location-note { font-size: 10px; line-height: 1.45; }
+  .footer-bottom { margin-top: 20px; }
+}
+@media (max-width: 390px) {
+  /* Em telas estreitas, evitar colunas ilegÃ­veis no contato. */
+  .footer-grid > .footer-navigation, .footer-grid > .footer-location { grid-column: 1 / -1; }
+  .footer-contact-list { gap: 13px 9px; }
+  .about-stats { gap: 5px; }
+}

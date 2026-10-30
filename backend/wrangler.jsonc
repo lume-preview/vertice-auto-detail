@@ -1,0 +1,37 @@
+
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+
+  // LUME AGENDA UNIVERSAL
+  // Instalacao de desenvolvimento da Lume.
+  // Cada cliente real tera sua propria configuracao.
+
+  "name": "lume-agenda-vertice-api",
+
+  "main": "src/index.js",
+
+  "compatibility_date": "2026-10-27",
+
+  "dev": {
+    "ip": "127.0.0.1",
+    "port": 8787
+  },
+
+  "d1_databases": [
+    {
+      "binding": "lume_agenda_db",
+      "database_name": "lume-agenda-db",
+      "database_id": "dfae0ff9-2db0-48d4-931e-9e3bab76fb8d"
+    }
+  ],
+
+  "previews": {
+    "d1_databases": [
+      {
+        "binding": "lume_agenda_db",
+        "database_name": "lume-agenda-db",
+        "database_id": "dfae0ff9-2db0-48d4-931e-9e3bab76fb8d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+
+# Dependências do Node.js
+node_modules/
+
+# Arquivos temporários do Cloudflare Wrangler
+.wrangler/
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+
+# Arquivos do sistema operacional
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# Arquivos de configuração locais do editor
+.vscode/
