@@ -700,10 +700,9 @@ async function handleAgendaRoute(request,db,path,method) {
       return jsonResponse({success:true,data:await publicSnapshot(db,false)});
     }
     if (path==="/api/appointments" && method==="POST") {
-      if (!validRequestOrigin(request)) return errorResponse("Origem não autorizada",403);
-      let payload;try{payload=await readRequest(request);}catch(e){return errorResponse(e.message,400);}
-      const result=await createAppointment(db,payload,"public");
-      return result.error?errorResponse(result.error,result.status):jsonResponse({success:true,data:result.data},201);
+      // A Vértice é exclusivamente demonstrativa: não grava reservas na tabela principal.
+      // As operações fictícias continuam nas rotas /api/demo/*, isoladas por sessão.
+      return errorResponse("Agendamentos reais desativados nesta demonstracao",403);
     }
     return null;
   }
