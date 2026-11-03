@@ -11,8 +11,16 @@
   "main": "src/index.js",
 
   "compatibility_date": "2026-10-27",
+
+  // A Vertice funciona exclusivamente como demonstracao.
+  "vars": {
+    "LUME_MODE": "demo"
+  },
+
+  // Limpeza das sessoes demonstrativas expiradas.
+  // 03:15 UTC = 00:15 horario de Brasilia.
   "triggers": {
-  "crons": ["15 3 * * *"]
+    "crons": ["15 3 * * *"]
   },
 
   "dev": {
