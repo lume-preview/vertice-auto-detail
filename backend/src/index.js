@@ -939,6 +939,21 @@ async function demoRoute(request,db,path,method) {
 }
 
 export default {
+  // Limpeza automatica exclusiva de sessoes demonstrativas vencidas.
+  // Acionada pelo Cron Trigger configurado no backend/wrangler.jsonc.
+  async scheduled(controller, env, ctx) {
+    const db = env.lume_agenda_db;
+    if (!db) throw new Error("Banco D1 indisponivel para limpeza de demonstracoes");
+
+    const result = await db.prepare(
+      "DELETE FROM demo_instances WHERE expires_at <= ?"
+    ).bind(new Date().toISOString()).run();
+
+    console.log("Limpeza diaria de demonstracoes expiradas", {
+      removidas: result.meta?.changes ?? 0
+    });
+  },
+
   async fetch(request, env) {
     const url = new URL(request.url);
 
